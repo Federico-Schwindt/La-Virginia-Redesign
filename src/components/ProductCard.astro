@@ -1,0 +1,27 @@
+---
+import Icon from './Icon.astro';
+import { type Product, img, url } from '../lib/site';
+interface Props { p: Product; eager?: boolean; class?: string }
+const { p, eager = false, class: cls } = Astro.props;
+const size = p.sizes[0] ?? 'Unidad';
+const payload = JSON.stringify({ slug: p.slug, name: p.name, size, img: p.image, line: p.line });
+---
+<article class:list={['pcard', `pcard--${p.line}`, cls]} data-product data-cat={p.category} data-name={p.name.toLowerCase()}>
+  <div class="pcard__media">
+    <span class="pcard__cat"><span class="chip">{p.category}</span></span>
+    {p.image && (
+      <img src={img(p, 420)} srcset={`${img(p, 420)} 420w, ${img(p, 800)} 800w`} sizes="(max-width: 700px) 50vw, 25vw" alt={p.fullName} width="420" height="420" loading={eager ? 'eager' : 'lazy'} decoding="async" style={`view-transition-name: p-${p.slug}`} />
+    )}
+  </div>
+  <div class="pcard__body">
+    <h3 class="pcard__name">{p.name}</h3>
+    <p class="pcard__sizes">{p.sizes.length ? p.sizes.join(' · ') : 'Presentación única'}</p>
+    <div class="pcard__foot">
+      <span class="pcard__more">Ver ficha</span>
+      <button class="pcard__add" type="button" data-add={payload} aria-label={`Agregar ${p.name} a la solicitud de pedido`}>
+        <Icon name="plus" /> Pedido
+      </button>
+    </div>
+  </div>
+  <a class="pcard__link" href={url(`/productos/${p.slug}/`)} aria-label={`Ver ${p.fullName}`}></a>
+</article>

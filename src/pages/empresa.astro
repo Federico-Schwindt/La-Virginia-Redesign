@@ -1,0 +1,101 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Lines from '../components/Lines.astro';
+import Seal from '../components/Seal.astro';
+import { url, media, company } from '../lib/site';
+---
+<Base title="Nuestra historia" tone="dark">
+  <section class="phead wrap eh">
+    <div>
+      <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><span>Nuestra historia</span></nav>
+      <p class="label">III · Desde 1915</p>
+      <Lines as="h1" class="d1" text="Más de un siglo|en la mesa _argentina._" />
+    </div>
+    <Seal class="eh__seal" />
+  </section>
+
+  <section class="wrap eh__intro">
+    <p class="eh__big serif" data-rv>La Virginia nace en <em>1915</em> como un emprendimiento familiar, pero con el empuje y la decisión de las grandes empresas, en unas pequeñas instalaciones de la ciudad de Rosario.</p>
+    <div class="prose" data-rv style="--d:150">
+      <p>A partir de 1940 pone en práctica su expansión geográfica, guiada por un plan estratégico de distribución que multiplicó el número de sucursales hasta llegar a prácticamente toda la Argentina.</p>
+      <p>Una visión de largo plazo —inversión constante en tecnología e innovación y relaciones sólidas con proveedores, clientes y empleados— convirtió aquel pequeño emprendimiento en una empresa líder a nivel nacional, con consolidación regional y proyección mundial.</p>
+    </div>
+  </section>
+
+  <section class="sec--sm wrap">
+    <ol class="years">
+      <li data-rv><span class="years__y onum">1915</span><h3>Rosario</h3><p>Nace como emprendimiento familiar en pequeñas instalaciones de la ciudad.</p></li>
+      <li data-rv style="--d:100"><span class="years__y onum">1940</span><h3>Expansión</h3><p>Un plan estratégico de distribución multiplica las sucursales en todo el país.</p></li>
+      <li data-rv style="--d:200"><span class="years__y">Hoy</span><h3>Liderazgo</h3><p>16 sucursales, exportación a más de 18 países y dos empresas propias en Uruguay.</p></li>
+    </ol>
+  </section>
+
+  <section class="t-azul sec--sm">
+    <div class="wrap">
+      <dl class="enums">
+        {company.numbers.slice(1).map((n, i) => (
+          <div data-rv style={`--d:${i * 90}`}><dd class="onum">{n.prefix}<span data-count={n.value}>{n.value}</span>{n.suffix}</dd><dt>{n.label}</dt></div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec wrap qual" id="calidad">
+    <div>
+      <p class="label">Calidad e inocuidad</p>
+      <Lines class="d2" text="Certificados bajo|norma _FSSC 22000._" />
+      <p class="lede" data-rv>Mejoramos continuamente nuestro Sistema de Gestión de Inocuidad y Calidad, certificado bajo la norma internacional FSSC 22000, desde el comienzo del proceso de elaboración.</p>
+      <ul class="qual__list" data-rv>
+        <li><Icon name="globe" />Materias primas e insumos de más de 20 países</li>
+        <li><Icon name="factory" />Equipamiento y tecnología de última generación</li>
+        <li><Icon name="shield" />Investigación y desarrollo para mejorar cada proceso</li>
+      </ul>
+    </div>
+    <div class="qual__badge" data-rv style="--d:150">
+      <img src={url('/media/fssc22000.webp')} alt="Sello de certificación FSSC 22000" width="200" height="200" loading="lazy" />
+      <p class="serif">Seguridad alimentaria certificada internacionalmente.</p>
+    </div>
+  </section>
+
+  <section id="planta" class="plant">
+    <div class="plant__img"><img src={url('/media/planta-rosario.webp')} srcset={`${url('/media/planta-rosario-sm.webp')} 720w, ${url('/media/planta-rosario.webp')} 1400w`} sizes="100vw" alt="Vista aérea de la planta de La Virginia en Rosario" width="1400" height="932" loading="lazy" decoding="async" data-parallax="6" /></div>
+    <div class="wrap plant__card t-noche" data-rv>
+      <p class="label">Visitas a la planta</p>
+      <h2 class="d3" style="margin-top:12px">Conocé dónde nace cada taza.</h2>
+      <p class="prose" style="margin-top:12px">La planta de Rosario recibe visitas programadas de instituciones educativas. Por normas de inocuidad no se permiten cámaras ni celulares dentro del sector productivo.</p>
+      <a class="btn btn--oro btn--sm" href="https://www.lavirginia.com.ar/conoce-nuestra-planta/" target="_blank" rel="noopener" style="margin-top:20px">Requisitos en el sitio oficial <Icon name="ne" /></a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .eh { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; }
+  .eh h1 { margin-top: 18px; }
+  .eh__seal { width: 170px; color: var(--azul); flex: none; }
+  .eh__intro { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 5vw, 80px); padding-bottom: clamp(48px, 6vw, 96px); border-bottom: 1px solid var(--rule); }
+  .eh__big { font-size: clamp(1.6rem, 1rem + 1.8vw, 2.6rem); line-height: 1.18; font-weight: 320; }
+  .eh__big em { color: var(--azul); }
+  .years { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .years li { padding: clamp(24px, 3vw, 36px); border-radius: 999px 999px 22px 22px; background: var(--crema); min-height: 420px; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; }
+  .years__y { font-family: var(--serif); font-weight: 300; font-size: clamp(3rem, 1rem + 4vw, 5.4rem); letter-spacing: -0.04em; line-height: 1; color: var(--azul); }
+  .years h3 { font-size: 1.6rem; font-weight: 360; }
+  .years p { color: var(--muted); }
+  .enums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .enums div { border-left: 1px solid var(--rule); padding-left: 20px; }
+  .enums dd { font-family: var(--serif); font-weight: 300; font-size: clamp(2.6rem, 1rem + 3.4vw, 4.6rem); letter-spacing: -0.04em; color: var(--oro); line-height: 1; }
+  .enums dt { color: var(--muted); margin-top: 10px; font-size: 0.92rem; max-width: 22ch; }
+  .qual { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: clamp(28px, 6vw, 96px); align-items: center; }
+  .qual h2 { margin-top: 18px; }
+  .qual .lede { margin-top: 22px; }
+  .qual__list { list-style: none; padding: 0; margin-top: 28px; display: grid; gap: 4px; }
+  .qual__list li { display: flex; gap: 14px; align-items: center; padding: 14px 0; border-top: 1px solid var(--rule); }
+  .qual__list :global(svg) { color: var(--azul); flex: none; }
+  .qual__badge { padding: 36px; border-radius: 999px 999px 26px 26px; background: var(--crema); display: grid; justify-items: center; gap: 18px; text-align: center; }
+  .qual__badge p { font-size: 1.3rem; line-height: 1.2; }
+  .plant { position: relative; }
+  .plant__img { height: clamp(420px, 60vw, 760px); overflow: hidden; }
+  .plant__img img { width: 100%; height: 100%; object-fit: cover; }
+  .plant__card { position: relative; margin-top: -160px; width: min(560px, calc(100% - 2 * var(--gutter))); margin-left: var(--gutter); padding: clamp(24px, 3vw, 40px); border-radius: 26px; z-index: 1; margin-bottom: clamp(64px, 8vw, 120px); }
+  @media (max-width: 900px) { .eh__intro, .qual { grid-template-columns: 1fr; } .years { grid-template-columns: 1fr; } .years li { min-height: 260px; } .enums { grid-template-columns: 1fr 1fr; } .eh__seal { width: 110px; } }
+</style>

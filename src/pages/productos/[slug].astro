@@ -1,0 +1,163 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { products, img, url, type Product } from '../../lib/site';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props as { p: Product };
+const same = products.filter((q) => q.slug !== p.slug && q.category === p.category);
+const more = (same.length >= 4 ? same : [...same, ...products.filter((q) => q.slug !== p.slug && q.line === p.line && q.category !== p.category)]).slice(0, 4);
+const lineHref = p.line === 'te' ? '/te/' : '/cafe/';
+const lineName = p.line === 'te' ? 'Té y herboristería' : 'Café';
+const fallback = p.line === 'te'
+  ? ['Una variedad de la línea ' + p.category + ' de La Virginia, elaborada en Rosario.']
+  : ['Un café de la línea ' + p.category + ' de La Virginia, seleccionado y tostado en Rosario.'];
+const desc = p.description.length ? p.description : fallback;
+const sizes = p.sizes.length ? p.sizes : ['Unidad'];
+const claimIcon = (c: string) => (/T\.A\.C\.C/i.test(c) ? 'shield' : /planta|saquito/i.test(c) ? 'leaf' : /cafe/i.test(c) ? 'cup' : 'check');
+---
+<Base title={p.fullName} tone="dark" description={`${p.fullName}: ${desc[0].slice(0, 140)}`}>
+  <section class="pdp wrap" data-pdp>
+    <div class={`pdp__media pdp__media--${p.line}`}>
+      <div class="pdp__arch">
+        {p.image && <img src={img(p, 800)} alt={p.fullName} width="800" height="800" fetchpriority="high" style={`view-transition-name: p-${p.slug}`} data-tilt />}
+      </div>
+      <span class="pdp__badge">{p.brand}</span>
+    </div>
+
+    <div class="pdp__info">
+      <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><a href={url(lineHref)}>{lineName}</a><span>/</span><a href={url(`${lineHref}?linea=${encodeURIComponent(p.category)}`)}>{p.category}</a></nav>
+      <p class="label">{p.category}</p>
+      <h1 class="d2 pdp__name">{p.name}</h1>
+      <div class="pdp__desc prose">{desc.map((d) => <p>{d}</p>)}</div>
+
+      {(p.notes.length > 0 || p.intensity) && (
+        <div class="spec">
+          <p class="label" style="--accent:var(--muted)">Ficha sensorial</p>
+          <dl class="spec__list">
+            {p.notes.map((n) => <div><dt>{n.k}</dt><dd>{n.v}</dd></div>)}
+            {p.intensity && (
+              <div class="spec__int">
+                <dt>{p.intensity.label}</dt>
+                <dd>
+                  <span class="meter" role="img" aria-label={`${p.intensity.value} de ${p.intensity.max}`}>
+                    {Array.from({ length: p.intensity.max }).map((_, i) => <i class:list={[p.line, { on: i < p.intensity!.value }]} style={`--i:${i}`}></i>)}
+                  </span>
+                  <span class="onum">{p.intensity.value}/{p.intensity.max}</span>
+                </dd>
+              </div>
+            )}
+          </dl>
+        </div>
+      )}
+
+      {p.claims.length > 0 && (
+        <ul class="claims">{p.claims.map((c) => <li><Icon name={claimIcon(c)} size={18} />{c}</li>)}</ul>
+      )}
+
+      <fieldset class="sizes">
+        <legend class="label" style="--accent:var(--muted)">Presentación</legend>
+        <div class="sizes__row">
+          {sizes.map((s, i) => (
+            <label class="size"><input type="radio" name="size" value={s} checked={i === 0} data-size /><span>{s}</span></label>
+          ))}
+        </div>
+      </fieldset>
+
+      <div class="buy">
+        <div class="qty qty--lg" role="group" aria-label="Cantidad de bultos">
+          <button type="button" data-qd="-1" aria-label="Restar">−</button><span data-qv>1</span><button type="button" data-qd="1" aria-label="Sumar">+</button>
+        </div>
+        <button class="btn buy__btn" type="button" data-buy data-add={JSON.stringify({ slug: p.slug, name: p.name, size: sizes[0], img: p.image, line: p.line, qty: 1 })}>
+          <Icon name="box" /> Agregar a la solicitud
+        </button>
+      </div>
+      <p class="buy__note">Precios mayoristas a cotizar por la sucursal más cercana. <a class="lnk" href={url('/pedido/')}>Ver mi solicitud</a></p>
+
+      <div class="pdp__links">
+        <a href={p.source} target="_blank" rel="noopener" class="lnk">Ficha en el sitio oficial <Icon name="ne" size={16} /></a>
+        {p.line === 'cafe' && <a href={url('/conoce-tu-cafe/')} class="lnk">¿Torrado o tostado? <Icon name="arrow" size={16} /></a>}
+        {p.line === 'te' && <a href={url('/sustentabilidad/')} class="lnk">Saquito compostable <Icon name="arrow" size={16} /></a>}
+      </div>
+    </div>
+  </section>
+
+  {more.length > 0 && (
+    <section class="t-crema sec--sm">
+      <div class="wrap">
+        <div class="more__head"><h2 class="d3">También en <em>{p.line === 'te' ? 'té' : 'café'}</em></h2><a class="btn btn--line btn--sm" href={url(lineHref)}>Ver todo <Icon name="arrow" /></a></div>
+        <div class="more__grid">{more.map((q) => <ProductCard p={q} />)}</div>
+      </div>
+    </section>
+  )}
+
+  <script>
+    const root = document.querySelector<HTMLElement>('[data-pdp]')!;
+    const buy = root.querySelector<HTMLButtonElement>('[data-buy]')!;
+    const qv = root.querySelector('[data-qv]')!;
+    const data = JSON.parse(buy.dataset.add!);
+    let qty = 1;
+    const sync = () => { data.qty = qty; buy.dataset.add = JSON.stringify(data); qv.textContent = String(qty); };
+    root.querySelectorAll<HTMLInputElement>('[data-size]').forEach((r) => r.addEventListener('change', () => { data.size = r.value; sync(); }));
+    root.querySelectorAll<HTMLButtonElement>('[data-qd]').forEach((b) => b.addEventListener('click', () => { qty = Math.max(1, Math.min(999, qty + +b.dataset.qd!)); sync(); }));
+    buy.addEventListener('click', () => setTimeout(() => { qty = 1; sync(); }, 40));
+    // Inclinación sutil del packaging con el puntero
+    const im = root.querySelector<HTMLElement>('[data-tilt]');
+    const box = im?.parentElement;
+    if (im && box && matchMedia('(hover: hover)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      box.addEventListener('pointermove', (e) => { const r = box.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - 0.5; const y = (e.clientY - r.top) / r.height - 0.5; im.style.transform = `perspective(900px) rotateY(${x * 12}deg) rotateX(${-y * 8}deg) scale(1.03)`; });
+      box.addEventListener('pointerleave', () => (im.style.transform = ''));
+    }
+  </script>
+</Base>
+
+<style>
+  .pdp { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 88px); padding-top: calc(var(--header-h) + 28px); padding-bottom: clamp(64px, 8vw, 120px); align-items: start; }
+  .pdp__media { position: sticky; top: calc(var(--header-h) + 18px); }
+  .pdp__arch { aspect-ratio: 1 / 1.12; border-radius: 999px 999px 26px 26px; background: radial-gradient(80% 70% at 50% 65%, #fff, var(--crema) 75%); display: grid; place-items: center; overflow: hidden; box-shadow: inset 0 0 0 1px var(--rule); }
+  .pdp__media--te .pdp__arch { background: radial-gradient(80% 70% at 50% 65%, #fff, #e4e9d4 80%); }
+  .pdp__media--cafe .pdp__arch { background: radial-gradient(80% 70% at 50% 65%, #fff, #eadccb 80%); }
+  .pdp__arch img { width: 72%; height: 72%; object-fit: contain; mix-blend-mode: multiply; transition: transform 0.6s var(--ease); }
+  .pdp__badge { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); font-family: var(--serif); font-style: italic; font-size: 1rem; color: var(--azul); background: var(--porcelana); padding: 6px 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--rule); }
+  .pdp__info { padding-top: clamp(8px, 4vw, 56px); }
+  .pdp__name { margin-top: 16px; }
+  .pdp__desc { margin-top: 22px; font-size: 1.05rem; }
+  .spec { margin-top: 28px; padding: 20px 22px; border-radius: 20px; background: var(--porcelana); box-shadow: inset 0 0 0 1px var(--rule); }
+  .spec__list { display: grid; gap: 0; margin-top: 10px; }
+  .spec__list > div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 11px 0; border-top: 1px solid var(--rule); }
+  .spec__list > div:first-child { border-top: 0; }
+  .spec__list dt { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; color: var(--muted); }
+  .spec__list dd { font-family: var(--serif); font-size: 1.12rem; line-height: 1.3; }
+  .spec__int dd { display: flex; align-items: center; gap: 12px; font-family: var(--sans); font-size: 0.86rem; color: var(--muted); }
+  .meter { display: inline-flex; gap: 6px; }
+  .meter i { width: 16px; height: 16px; border-radius: 50% 0; background: var(--crema-2); transform: rotate(-45deg) scale(0.6); opacity: 0.6; transition: transform 0.6s var(--ease), opacity 0.6s, background-color 0.6s; transition-delay: calc(var(--i) * 90ms + 300ms); }
+  .meter i.cafe { border-radius: 50%; width: 13px; height: 17px; transform: rotate(25deg) scale(0.6); }
+  .meter i.on { background: var(--te); opacity: 1; transform: rotate(-45deg) scale(1); }
+  .meter i.cafe.on { background: var(--cafe); transform: rotate(25deg) scale(1); }
+  @media (max-width: 520px) { .spec__list > div { grid-template-columns: 1fr; gap: 2px; } }
+  .claims { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+  .claims li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: var(--crema); font-size: 0.86rem; font-weight: 600; }
+  .claims :global(svg) { color: var(--te); }
+  .sizes { border: 0; padding: 0; margin-top: 30px; }
+  .sizes legend { margin-bottom: 12px; }
+  .sizes__row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .size input { position: absolute; opacity: 0; pointer-events: none; }
+  .size span { display: inline-flex; align-items: center; height: 44px; padding: 0 18px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--rule); cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: background-color 0.25s, color 0.25s, box-shadow 0.25s; }
+  .size span:hover { box-shadow: inset 0 0 0 1px var(--azul); }
+  .size input:checked + span { background: var(--azul); color: var(--porcelana); box-shadow: none; }
+  .size input:focus-visible + span { outline: 2px solid var(--oro-2); outline-offset: 2px; }
+  .buy { display: flex; gap: 10px; margin-top: 24px; }
+  .qty--lg { height: 54px; }
+  .qty--lg button { width: 46px; height: 54px; }
+  .qty--lg span { min-width: 34px; font-size: 1rem; }
+  .buy__btn { flex: 1; }
+  .buy__note { margin-top: 12px; font-size: 0.88rem; color: var(--muted); }
+  .pdp__links { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--rule); }
+  .more__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 28px; }
+  .more__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 1000px) { .more__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 860px) { .pdp { grid-template-columns: 1fr; } .pdp__media { position: relative; top: 0; } .pdp__arch { aspect-ratio: 1 / 0.95; } }
+</style>

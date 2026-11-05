@@ -1,0 +1,72 @@
+---
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
+import '@fontsource-variable/hanken-grotesk/wght.css';
+import frauncesWoff2 from '@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2?url';
+import hankenWoff2 from '@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2?url';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Overlays from '../components/Overlays.astro';
+import { url } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  tone?: 'light' | 'dark';
+  preload?: { href: string; as: string; type?: string; media?: string }[];
+}
+const {
+  title,
+  description = 'Concepto de rediseño no oficial para La Virginia: té y café de Rosario desde 1915. Propuesta de diseño, sin afiliación con Cafés La Virginia S.A.',
+  tone = 'light',
+  preload = [],
+} = Astro.props;
+const full = title ? `${title} · La Virginia (concepto)` : 'La Virginia — Sabores que reconfortan desde 1915 (concepto)';
+const og = new URL(url('/media/og.jpg'), Astro.site);
+---
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{full}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#0a2e73" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="La Virginia — rediseño conceptual (no oficial)" />
+    <meta property="og:title" content={full} />
+    <meta property="og:description" content={`Concepto de diseño, sin afiliación con La Virginia. ${description}`} />
+    <meta property="og:image" content={og} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href={url('/favicon.png')} />
+    <link rel="preload" href={frauncesWoff2} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={hankenWoff2} as="font" type="font/woff2" crossorigin />
+    {preload.map((p) => <link rel="preload" href={p.href} as={p.as} type={p.type} media={p.media} fetchpriority="high" />)}
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Saltar al contenido</a>
+    <Header tone={tone} />
+    <main id="main"><slot /></main>
+    <Footer />
+    <Overlays />
+    <script is:inline>
+      // Lo que ya está en pantalla se muestra antes del primer pintado (el LCP nunca espera al JS)
+      (function () {
+        var h = innerHeight;
+        document.querySelectorAll('[data-rv],[data-lines],[data-img]').forEach(function (el) {
+          var r = el.getBoundingClientRect();
+          if (r.top < h && r.bottom > 0) el.classList.add('in', 'now');
+        });
+        setTimeout(function () {
+          if (!window.__lv) document.querySelectorAll('[data-rv],[data-lines],[data-img]').forEach(function (el) { el.classList.add('in'); });
+        }, 4000);
+      })();
+    </script>
+    <script>
+      import '../scripts/app';
+    </script>
+  </body>
+</html>

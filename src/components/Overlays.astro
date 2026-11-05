@@ -1,0 +1,47 @@
+---
+import Icon from './Icon.astro';
+import { url, AUTHOR } from '../lib/site';
+---
+<!-- Solicitud de pedido mayorista (B2B) -->
+<div class="drawer" data-drawer aria-hidden="true" inert>
+  <div class="drawer__scrim" data-close-order></div>
+  <aside class="drawer__panel" role="dialog" aria-modal="true" aria-labelledby="order-title">
+    <div class="drawer__head">
+      <div>
+        <p class="label">Pedido mayorista</p>
+        <h2 id="order-title" style="margin-top:10px">Tu solicitud</h2>
+      </div>
+      <button class="xbtn" type="button" data-close-order aria-label="Cerrar"><Icon name="close" /></button>
+    </div>
+    <div class="drawer__body" data-order-items></div>
+    <div class="drawer__foot" data-order-foot hidden>
+      <p style="font-size:.9rem;color:var(--muted)">Sin precios online: un ejecutivo de la sucursal más cercana te envía la cotización.</p>
+      <a class="btn" href={url('/pedido/')} style="width:100%;margin-top:14px">Completar solicitud <Icon name="arrow" /></a>
+    </div>
+  </aside>
+</div>
+
+<div class="toast" role="status" aria-live="polite" data-toast>
+  <span data-toast-text>Agregado a tu pedido</span>
+  <button type="button" data-open-order>Ver pedido</button>
+</div>
+
+<!-- Aviso de concepto no oficial -->
+<button class="cpill" type="button" data-open-notice aria-haspopup="dialog"><i aria-hidden="true"></i>Concepto<span class="cpill__x"> · no afiliado a La Virginia</span></button>
+<div class="modal" data-notice aria-hidden="true" inert>
+  <div class="modal__scrim" data-close-notice></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="notice-title">
+    <p class="label">Aviso · Leer antes de explorar</p>
+    <h2 id="notice-title" class="d3" style="margin-top:14px;max-width:20ch">Esto es un concepto de diseño, <em>no</em> el sitio oficial de La Virginia.</h2>
+    <div class="modal__body">
+      <p><b>Propuesta independiente.</b> Rediseño no solicitado, creado por {AUTHOR.name} con fines de portfolio. No está afiliado, avalado ni patrocinado por Cafés La Virginia S.A.</p>
+      <p><b>Marcas y contenidos.</b> “La Virginia”, su logotipo, los nombres de producto, el packaging y los textos son marcas o propiedad de sus titulares. Se muestran solo para ilustrar la propuesta; no se reclama ninguna propiedad.</p>
+      <p><b>No se vende nada.</b> No hay pedidos reales ni se procesan pagos, y los formularios no envían ni guardan datos. Para productos y consultas reales visitá <a href="https://www.lavirginia.com.ar" target="_blank" rel="noopener">lavirginia.com.ar</a>.</p>
+      <p><b>Titulares de derechos.</b> Si querés que se modifique o retire algo, escribí a <a href={`mailto:${AUTHOR.email}?subject=Concepto%20La%20Virginia`}>{AUTHOR.email}</a> y se retira de inmediato.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:24px">
+      <button type="button" class="btn" data-ack-notice>Entendido, ver el concepto <Icon name="arrow" /></button>
+      <a class="btn btn--line" href="https://www.lavirginia.com.ar" target="_blank" rel="noopener">Sitio oficial <Icon name="ne" /></a>
+    </div>
+  </div>
+</div>

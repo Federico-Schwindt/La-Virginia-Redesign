@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from './Icon.astro';
+import Lines from './Lines.astro';
+import ProductCard from './ProductCard.astro';
+import { type Product, url, media, linesOf } from '../lib/site';
+interface Props { line: 'te' | 'cafe'; list: Product[] }
+const { line, list } = Astro.props;
+const lines = linesOf(list);
+const T = line === 'te'
+  ? { title: 'Té y herboristería', h: 'Té para cada|_momento_ del día.', lede: 'Hojas de la región tealera más austral del mundo, hierbas seleccionadas y la línea Equilibrio. Saquitos de papel hecho a base de plantas.', poster: 'te-hero', video: 'te-hero', other: { href: '/cafe/', label: 'Ver el café' }, roman: 'I' }
+  : { title: 'Café', h: 'Del grano|a tu _taza._', lede: 'Tostado, torrado, en granos, cápsulas, saquitos, instantáneo y mixes: granos de Brasil, Colombia, Honduras, Perú y Etiopía, tostados en Rosario.', poster: 'cafe-hero', video: 'cafe-hero', other: { href: '/te/', label: 'Ver el té' }, roman: 'II' };
+---
+<Base title={T.title} tone="light" preload={[{ href: media(`${T.poster}.avif`), as: 'image', type: 'image/avif' }]}>
+  <section class="chero t-azul">
+    <div class="wrap chero__grid">
+      <div>
+        <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><span>{T.title}</span></nav>
+        <p class="label"><span class="roman" style="color:var(--oro)">{T.roman}.</span> {list.length} productos · {lines.length} líneas</p>
+        <Lines as="h1" class="d1" text={T.h} />
+        <p class="lede" data-rv>{T.lede}</p>
+      </div>
+      <div class="chero__media arch">
+        <img src={media(`${T.poster}.avif`)} alt="" width="1600" height="893" fetchpriority="high" />
+        <video muted loop playsinline preload="none" aria-hidden="true" data-lazy><source data-src={media(`${T.video}.mp4`)} type="video/mp4" /></video>
+      </div>
+    </div>
+  </section>
+
+  <div class="bar" data-bar>
+    <div class="wrap bar__in">
+      <div class="bar__chips" role="tablist" aria-label="Líneas">
+        <button type="button" role="tab" class="bchip" data-filter="all" aria-selected="true">Todas <span>{list.length}</span></button>
+        {lines.map((l) => <button type="button" role="tab" class="bchip" data-filter={l.label} aria-selected="false">{l.label} <span>{l.count}</span></button>)}
+      </div>
+      <label class="bar__search"><Icon name="leaf" size={16} /><span class="sr-only">Buscar</span><input type="search" placeholder="Buscar" data-q autocomplete="off" /></label>
+    </div>
+  </div>
+
+  <section class="wrap cat">
+    <div class="cat__grid" data-grid>
+      {list.map((p, i) => <ProductCard p={p} eager={i < 4} />)}
+    </div>
+    <p class="cat__empty" data-empty hidden>No encontramos productos con ese nombre.</p>
+    <aside class="cat__b2b t-noche">
+      <div>
+        <p class="label">¿Tenés un comercio?</p>
+        <p class="d3" style="margin-top:14px;max-width:22ch">Sumá productos a tu <em>solicitud</em> y recibí una cotización de la sucursal más cercana.</p>
+      </div>
+      <div class="cat__b2bctas">
+        <a class="btn btn--oro" href={url('/pedido/')}>Ver mi pedido <Icon name="arrow" /></a>
+        <a class="btn btn--line" href={url(T.other.href)}>{T.other.label}</a>
+      </div>
+    </aside>
+  </section>
+
+  <script>
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-product]'));
+    const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+    const q = document.querySelector<HTMLInputElement>('[data-q]')!;
+    const empty = document.querySelector<HTMLElement>('[data-empty]')!;
+    let cat = new URLSearchParams(location.search).get('linea') || 'all';
+    const apply = (animate = true) => {
+      const run = () => {
+        const s = q.value.trim().toLowerCase();
+        let n = 0;
+        cards.forEach((c) => {
+          const ok = (cat === 'all' || c.dataset.cat === cat) && (!s || c.dataset.name!.includes(s));
+          c.hidden = !ok;
+          if (ok) n++;
+        });
+        empty.hidden = n > 0;
+        chips.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.filter === cat)));
+        const u = new URL(location.href);
+        cat === 'all' ? u.searchParams.delete('linea') : u.searchParams.set('linea', cat);
+        history.replaceState(null, '', u);
+      };
+      const d = document as any;
+      if (animate && d.startViewTransition && !matchMedia('(prefers-reduced-motion: reduce)').matches) d.startViewTransition(run); else run();
+    };
+    chips.forEach((b) => b.addEventListener('click', () => { cat = b.dataset.filter!; apply(); }));
+    let t: number | undefined;
+    q.addEventListener('input', () => { clearTimeout(t); t = window.setTimeout(() => apply(false), 120); });
+    apply(false);
+  </script>
+</Base>
+
+<style>
+  .chero { padding-top: calc(var(--header-h) + 40px); padding-bottom: clamp(48px, 6vw, 88px); overflow: hidden; }
+  .chero .crumbs { color: rgba(251, 248, 242, 0.6); }
+  .chero__grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(28px, 5vw, 80px); align-items: end; }
+  .chero h1 { margin-top: 20px; }
+  .chero h1 :global(em) { color: var(--oro); }
+  .chero .lede { margin-top: 24px; }
+  .chero__media { aspect-ratio: 4 / 4.6; max-height: 70vh; justify-self: end; width: 100%; background: var(--azul); }
+  .chero__media img, .chero__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 50%; }
+  @media (max-width: 860px) { .chero__grid { grid-template-columns: 1fr; } .chero__media { order: -1; aspect-ratio: 4 / 3; max-height: none; } }
+
+  .bar { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--porcelana) 90%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--rule); padding-block: 12px; transition: top 0.6s var(--ease); }
+  :global(.hdr:not(.is-hidden)) ~ main .bar { top: var(--header-h); }
+  .bar__in { display: flex; gap: 16px; align-items: center; justify-content: space-between; }
+  .bar__chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .bar__chips::-webkit-scrollbar { display: none; }
+  .bchip { height: 40px; padding: 0 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--rule); font-size: 0.86rem; font-weight: 600; white-space: nowrap; display: inline-flex; gap: 8px; align-items: center; transition: background-color 0.3s, color 0.3s; }
+  .bchip span { font-size: 0.72rem; opacity: 0.6; }
+  .bchip:hover { box-shadow: inset 0 0 0 1px var(--azul); }
+  .bchip[aria-selected='true'] { background: var(--azul); color: var(--porcelana); box-shadow: none; }
+  .bar__search { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding: 0 14px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--rule); flex: none; }
+  .bar__search input { border: 0; background: none; outline: none; width: 150px; }
+  @media (max-width: 760px) { .bar__in { flex-direction: column; align-items: stretch; } .bar__search input { width: 100%; } }
+
+  .cat { padding-top: 32px; padding-bottom: clamp(80px, 10vw, 150px); }
+  .cat__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  @media (max-width: 1100px) { .cat__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (max-width: 760px) { .cat__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .cat__grid :global(.pcard__sizes) { display: none; } .cat__grid :global(.pcard__more) { display: none; } }
+  .cat__empty { text-align: center; padding: 60px 0; color: var(--muted); }
+  .cat__b2b { margin-top: clamp(56px, 7vw, 100px); border-radius: 28px; padding: clamp(28px, 4vw, 56px); display: flex; justify-content: space-between; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+  .cat__b2bctas { display: flex; gap: 10px; flex-wrap: wrap; }
+</style>

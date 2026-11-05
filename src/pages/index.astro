@@ -1,0 +1,403 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Lines from '../components/Lines.astro';
+import Seal from '../components/Seal.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { url, media, featured, tes, cafes, linesOf, company } from '../lib/site';
+const teLines = linesOf(tes);
+const cafeLines = linesOf(cafes);
+const ticker = [...teLines, ...cafeLines].map((l) => l.label);
+---
+<Base preload={[
+  { href: media('te-hero.avif'), as: 'image', type: 'image/avif', media: '(min-width: 801px)' },
+  { href: media('te-hero-v.avif'), as: 'image', type: 'image/avif', media: '(max-width: 800px)' },
+]}>
+  <!-- ============ I · HERO ============ -->
+  <section class="hero t-azul" data-hero>
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="label hero__in" style="--d:100">Cafés La Virginia · Rosario · Desde 1915</p>
+        <h1 class="d1 hero__title">
+          <span class="ln"><span class="hero__in" style="--d:180">Sabores que</span></span>
+          <span class="ln"><span class="hero__in" style="--d:280"><em>reconfortan</em></span></span>
+          <span class="ln"><span class="hero__in" style="--d:380">desde 1915.</span></span>
+        </h1>
+        <p class="lede hero__in" style="--d:560">Más de un siglo seleccionando té y café para la mesa argentina. Hoy, diez millones de infusiones por día llevan nuestro nombre.</p>
+        <div class="hero__ctas hero__in" style="--d:680">
+          <a class="btn btn--oro" href={url('/te/')}>Explorar el catálogo <Icon name="arrow" /></a>
+          <a class="btn btn--line" href={url('/empresas/')}>Soy comercio</a>
+        </div>
+      </div>
+      <div class="hero__art" data-hero-art>
+        <div class="hero__arch arch" data-hero-arch>
+          <picture>
+            <source media="(max-width: 800px)" srcset={media('te-hero-v.avif')} type="image/avif" />
+            <img src={media('te-hero.avif')} alt="Té negro servido en taza de porcelana" width="1600" height="893" fetchpriority="high" />
+          </picture>
+          <video muted loop playsinline preload="none" aria-hidden="true" data-hero-video data-wide={media('te-hero.mp4')} data-narrow={media('te-hero-v.mp4')}></video>
+        </div>
+        <div class="hero__round" data-hero-round>
+          <video muted loop playsinline preload="none" aria-hidden="true" data-lazy poster={media('cafe-hero-sm.avif')}>
+            <source data-src={media('cafe-hero-v.mp4')} type="video/mp4" />
+          </video>
+        </div>
+        <Seal class="hero__seal" />
+        <p class="hero__cap hero__in" style="--d:900"><span class="roman">i.</span> Té negro · <span class="roman">ii.</span> Espresso</p>
+      </div>
+    </div>
+    <div class="hero__ticker" aria-hidden="true">
+      <div class="marq" style="--dur:60s">
+        {[0, 1].map(() => <div class="marq__track">{ticker.map((t) => <span class="tick">{t}<i>✦</i></span>)}</div>)}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ II · NÚMEROS ============ -->
+  <section class="nums t-crema sec--sm">
+    <div class="wrap">
+      <div class="orn nums__orn"><span class="label" style="--accent:#6f5216">Los números del liderazgo</span></div>
+      <dl class="nums__grid">
+        {company.numbers.map((n, i) => (
+          <div class="num" data-rv style={`--d:${i * 90}`}>
+            <dd class="num__v onum">{n.prefix}<span data-count={n.value}>{n.value}</span>{n.suffix}</dd>
+            <dt class="num__l">{n.label}</dt>
+          </div>
+        ))}
+      </dl>
+      <div class="rule2"></div>
+    </div>
+  </section>
+
+  <!-- ============ III · DOS MUNDOS ============ -->
+  <section class="worlds sec">
+    <div class="wrap">
+      <div class="sech">
+        <p class="label">II · Dos mundos, una misma mesa</p>
+        <Lines class="d2" text="El té de la mañana.|El café de _siempre._" />
+      </div>
+      <div class="worlds__row">
+        <a class="world world--te" href={url('/te/')} data-rv>
+          <div class="world__media arch">
+            <video muted loop playsinline preload="none" aria-hidden="true" data-lazy poster={media('misiones-sm.avif')}>
+              <source data-src={media('misiones.mp4')} type="video/mp4" />
+            </video>
+          </div>
+          <div class="world__body">
+            <span class="roman">i.</span>
+            <h3 class="world__t">Té <em>&amp;</em> hierbas</h3>
+            <p class="world__n onum">{tes.length} variedades · {teLines.length} líneas</p>
+            <ul class="world__lines">{teLines.map((l) => <li>{l.label}</li>)}</ul>
+            <span class="lnk">Ver el té <Icon name="arrow" size={18} /></span>
+          </div>
+        </a>
+        <a class="world world--cafe" href={url('/cafe/')} data-rv style="--d:120">
+          <div class="world__media arch">
+            <video muted loop playsinline preload="none" aria-hidden="true" data-lazy poster={media('granos-sm.avif')}>
+              <source data-src={media('granos.mp4')} type="video/mp4" />
+            </video>
+          </div>
+          <div class="world__body">
+            <span class="roman">ii.</span>
+            <h3 class="world__t">Café</h3>
+            <p class="world__n onum">{cafes.length} variedades · {cafeLines.length} líneas</p>
+            <ul class="world__lines">{cafeLines.map((l) => <li>{l.label}</li>)}</ul>
+            <span class="lnk">Ver el café <Icon name="arrow" size={18} /></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IV · LOS DE SIEMPRE ============ -->
+  <section class="shelf t-crema sec">
+    <div class="wrap shelf__head">
+      <div class="sech" style="margin:0">
+        <p class="label">III · Los de siempre</p>
+        <Lines class="d2" text="Clásicos en la|_alacena_ argentina." />
+      </div>
+      <div class="shelf__nav">
+        <button class="xbtn" type="button" data-shelf="-1" aria-label="Anterior"><Icon name="arrow" class="flip" /></button>
+        <button class="xbtn" type="button" data-shelf="1" aria-label="Siguiente"><Icon name="arrow" /></button>
+      </div>
+    </div>
+    <div class="shelf__track" data-shelf-track>
+      {featured.map((p) => <ProductCard p={p} class="shelf__card" />)}
+      <a class="shelf__all" href={url('/te/')}>
+        <span class="d3">Ver los {tes.length + cafes.length} productos</span>
+        <span class="shelf__allicon"><Icon name="ne" /></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ V · ORIGEN ============ -->
+  <section class="origin t-noche sec">
+    <div class="wrap origin__grid">
+      <div class="origin__img arch" data-img>
+        <img src={media('misiones.avif')} srcset={`${media('misiones-sm.avif')} 800w, ${media('misiones.avif')} 1600w`} sizes="(max-width: 900px) 100vw, 50vw" alt="Plantaciones de té al amanecer" width="1600" height="893" loading="lazy" decoding="async" data-parallax="6" />
+      </div>
+      <div class="origin__copy">
+        <p class="label">IV · Origen</p>
+        <Lines class="d2" text="Del extremo sur|del mundo _tealero._" />
+        <p class="lede" data-rv>Las hojas y brotes de la <i>Camellia sinensis</i> se cultivan en la región tealera argentina, la más austral del mundo, y se cosechan en su punto máximo de frescura.</p>
+        <div class="origin__rule rule2"></div>
+        <div class="origin__coffee" data-rv>
+          <p class="label">El café</p>
+          <p class="origin__list serif">Brasil <i>·</i> Colombia <i>·</i> Honduras <i>·</i> Perú <i>·</i> Etiopía</p>
+          <p class="prose">Seleccionamos granos de distintos orígenes y los tostamos en Rosario. Recibimos materias primas e insumos de más de 20 países.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VI · HISTORIA ============ -->
+  <section class="story sec">
+    <div class="wrap">
+      <div class="sech">
+        <p class="label">V · Nuestra historia</p>
+        <Lines class="d2" text="Un emprendimiento familiar|con empuje de _gran empresa._" />
+      </div>
+      <ol class="tl">
+        <li class="tl__i" data-rv><span class="tl__y onum">1915</span><span class="tl__dot"></span><p>Nace en Rosario, Santa Fe, como un emprendimiento familiar en unas pequeñas instalaciones.</p></li>
+        <li class="tl__i" data-rv style="--d:120"><span class="tl__y onum">1940</span><span class="tl__dot"></span><p>Comienza la expansión: un plan estratégico de distribución multiplica las sucursales por todo el país.</p></li>
+        <li class="tl__i" data-rv style="--d:240"><span class="tl__y">Hoy</span><span class="tl__dot"></span><p>16 sucursales, exportación a más de 18 países y dos empresas propias en Uruguay.</p></li>
+        <li class="tl__i" data-rv style="--d:360"><span class="tl__y">FSSC</span><span class="tl__dot"></span><p>Sistema de Gestión de Inocuidad y Calidad certificado bajo la norma internacional FSSC 22000.</p></li>
+      </ol>
+    </div>
+    <figure class="story__plant">
+      <div class="story__plantimg"><img src={url('/media/planta-rosario.webp')} srcset={`${url('/media/planta-rosario-sm.webp')} 720w, ${url('/media/planta-rosario.webp')} 1400w`} sizes="100vw" alt="Vista aérea de la planta de La Virginia en Rosario" width="1400" height="932" loading="lazy" decoding="async" data-parallax="7" /></div>
+      <figcaption class="wrap"><span class="label" style="--accent:var(--oro)">Planta Rosario</span><a class="btn btn--oro btn--sm" href={url('/empresa/')}>Conocé nuestra historia <Icon name="arrow" /></a></figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ VII · SUSTENTABILIDAD ============ -->
+  <section class="eco t-crema sec">
+    <div class="wrap eco__grid">
+      <div class="eco__copy">
+        <p class="label" style="--accent:var(--te)">VI · Naturalidad que se disfruta</p>
+        <Lines class="d2" text="Un saquito que|vuelve a la _tierra._" />
+        <p class="lede" data-rv>Nuestros saquitos de papel filtro, hechos a base de plantas, son 100% biodegradables y compostables industrialmente.</p>
+        <ol class="cycle" data-rv>
+          <li><span class="onum">1</span>Fibras vegetales y PLA de maíz o caña de azúcar</li>
+          <li><span class="onum">2</span>Tu taza de té, todos los días</li>
+          <li><span class="onum">3</span>Compostaje industrial controlado</li>
+          <li><span class="onum">4</span>CO₂, agua y biomasa: vuelve a la tierra</li>
+        </ol>
+        <a class="lnk" href={url('/sustentabilidad/')} style="--accent:var(--te)">Recorré el ciclo <Icon name="arrow" size={18} /></a>
+      </div>
+      <div class="eco__media arch" data-img>
+        <video muted playsinline preload="none" aria-label="Un brote crece junto a un saquito de té compostado" data-lazy poster={media('compost-sm.avif')}>
+          <source data-src={media('compost.mp4')} type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIII · EMPRESAS ============ -->
+  <section class="biz t-azul sec">
+    <div class="wrap biz__grid">
+      <div class="biz__img arch" data-img>
+        <img src={media('cafeteria.avif')} srcset={`${media('cafeteria-sm.avif')} 450w, ${media('cafeteria.avif')} 900w`} sizes="(max-width: 900px) 90vw, 40vw" alt="Barra de cafetería con máquina espresso" width="900" height="1125" loading="lazy" decoding="async" />
+      </div>
+      <div>
+        <p class="label">VII · Para tu negocio</p>
+        <Lines class="d2" text="Calidad La Virginia|en cualquier _momento y lugar._" />
+        <div class="biz__cards">
+          <a class="bcard" href={url('/empresas/#espresso')} data-rv><Icon name="cup" size={28} /><h3>La Virginia Espresso</h3><p>Producto, vajilla, maquinaria y capacitación para tu cafetería.</p></a>
+          <a class="bcard" href={url('/empresas/#distribucion')} data-rv style="--d:100"><Icon name="truck" size={28} /><h3>Distribución nacional</h3><p>16 sucursales que abastecen a comercios de todo el país.</p></a>
+          <a class="bcard" href={url('/empresas/#exterior')} data-rv style="--d:200"><Icon name="globe" size={28} /><h3>Comercio exterior</h3><p>Representación y distribución en más de 18 países.</p></a>
+        </div>
+        <div class="biz__ctas">
+          <a class="btn btn--oro" href={url('/pedido/')}>Armar pedido mayorista <Icon name="arrow" /></a>
+          <a class="btn btn--line" href={url('/empresas/#cliente')}>Quiero ser cliente</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IX · GUÍA ============ -->
+  <section class="guide sec">
+    <div class="wrap guide__grid">
+      <div>
+        <p class="label">VIII · Conocé tu café</p>
+        <Lines class="d2" text="¿Torrado o _tostado?_" />
+        <p class="lede" data-rv>Origen, botánica, tostación y molienda: ocho factores definen el sabor, el aroma y el cuerpo de cada taza.</p>
+        <a class="btn" href={url('/conoce-tu-cafe/')} style="margin-top:28px">Leer la guía <Icon name="arrow" /></a>
+      </div>
+      <div class="guide__cards">
+        <article class="gcard" data-rv><span class="roman">a.</span><h3>Tostado</h3><p>El grano se tuesta sin agregados: perfil más limpio, notas propias del origen.</p></article>
+        <article class="gcard gcard--dark" data-rv style="--d:120"><span class="roman">b.</span><h3>Torrado</h3><p>Durante el tueste se incorpora azúcar, que carameliza y da una taza más intensa y de color profundo.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { animate, scroll } from 'motion';
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const narrow = () => matchMedia('(max-width: 800px)').matches;
+    // Video del héroe: el póster pinta primero, el film entra después de la carga
+    const v = document.querySelector<HTMLVideoElement>('[data-hero-video]');
+    const start = () => {
+      if (!v || reduced || (navigator as any).connection?.saveData) return;
+      v.src = narrow() ? v.dataset.narrow! : v.dataset.wide!;
+      v.addEventListener('playing', () => v.classList.add('ok'), { once: true });
+      v.play().catch(() => {});
+    };
+    document.readyState === 'complete' ? setTimeout(start, 150) : addEventListener('load', () => setTimeout(start, 150), { once: true });
+    // Parallax del héroe con Motion (scroll-linked)
+    if (!reduced) {
+      const hero = document.querySelector('[data-hero]')!;
+      const arch = document.querySelector('[data-hero-arch]');
+      const round = document.querySelector('[data-hero-round]');
+      const copy = document.querySelector('.hero__copy');
+      if (arch) scroll(animate(arch, { transform: ['translateY(0) scale(1)', 'translateY(8%) scale(1.04)'] }, { ease: 'linear' }), { target: hero, offset: ['start start', 'end start'] });
+      if (round) scroll(animate(round, { transform: ['translateY(0) rotate(0deg)', 'translateY(-38%) rotate(-8deg)'] }, { ease: 'linear' }), { target: hero, offset: ['start start', 'end start'] });
+      if (copy) scroll(animate(copy, { opacity: [1, 0], transform: ['translateY(0)', 'translateY(-10%)'] }, { ease: 'linear' }), { target: hero, offset: ['30% start', 'end start'] });
+    }
+    // Estante horizontal
+    const track = document.querySelector<HTMLElement>('[data-shelf-track]');
+    document.querySelectorAll<HTMLButtonElement>('[data-shelf]').forEach((b) =>
+      b.addEventListener('click', () => track?.scrollBy({ left: +b.dataset.shelf! * Math.min(track.clientWidth * 0.8, 720), behavior: 'smooth' })),
+    );
+  </script>
+</Base>
+
+<style>
+  /* ---- Hero ---- */
+  .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; overflow: hidden; padding-top: calc(var(--header-h) + 24px); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 70% at 78% 45%, rgba(26, 79, 176, 0.55), transparent 70%), radial-gradient(50% 60% at 0% 100%, rgba(6, 26, 64, 0.7), transparent 70%); pointer-events: none; }
+  .hero__grid { position: relative; flex: 1; display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(28px, 4vw, 72px); padding-block: clamp(20px, 4vw, 48px); }
+  .hero__title { margin-top: 26px; }
+  .hero__title .ln { display: block; overflow: hidden; padding-bottom: 0.06em; }
+  .hero__title .ln > span { display: block; }
+  .hero__title em { color: var(--oro); }
+  .hero .lede { margin-top: 28px; }
+  .hero__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 34px; }
+  .hero__in { animation: rise 1.3s var(--ease) both; animation-delay: calc(var(--d, 0) * 1ms); }
+  .hero__title .hero__in { animation-name: lineup; }
+  @keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+  @keyframes lineup { from { transform: translateY(108%); } }
+  .hero__art { position: relative; height: min(76vh, 720px); justify-self: end; width: min(100%, 560px); }
+  .hero__arch { position: absolute; inset: 0 0 0 12%; background: var(--azul); box-shadow: 0 0 0 1px rgba(255, 211, 2, 0.35), 0 0 0 12px var(--azul), 0 0 0 13px rgba(255, 211, 2, 0.22); animation: archin 1.6s var(--ease) both; }
+  @keyframes archin { from { clip-path: inset(30% 20% 0 20% round 999px 999px 18px 18px); } to { clip-path: inset(0 round 999px 999px 18px 18px); } }
+  .hero__arch img, .hero__arch video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+  .hero__arch video { opacity: 0; transition: opacity 1.2s; }
+  .hero__arch video.ok { opacity: 1; }
+  .hero__round { position: absolute; left: 0; bottom: 6%; width: 38%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--azul); box-shadow: 0 0 0 6px var(--azul), 0 0 0 7px rgba(255, 211, 2, 0.5), 0 30px 60px -20px rgba(0, 0, 0, 0.5); animation: rise 1.4s var(--ease) 0.5s both; }
+  .hero__round video { width: 100%; height: 100%; object-fit: cover; object-position: 70% 50%; }
+  .hero__seal { position: absolute; top: -2%; right: -4%; width: 132px; }
+  .hero__cap { position: absolute; right: 0; bottom: -34px; font-size: 0.82rem; color: var(--muted); }
+  .hero__ticker { position: relative; border-top: 1px solid var(--rule); padding-block: 16px; margin-top: 24px; }
+  .tick { font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--porcelana); display: inline-flex; align-items: center; gap: 48px; white-space: nowrap; }
+  .tick i { font-style: normal; color: var(--oro); font-size: 0.9rem; }
+  @media (max-width: 800px) {
+    .hero__grid { grid-template-columns: 1fr; padding-top: 8px; }
+    .hero__art { order: -1; height: 52vh; width: 100%; justify-self: stretch; }
+    .hero__arch { inset: 0 0 0 18%; }
+    .hero__seal { width: 96px; top: auto; bottom: -10px; right: -6px; }
+    .hero__cap { display: none; }
+    .hero__round { width: 40%; bottom: 4%; }
+  }
+
+  /* ---- Números ---- */
+  .nums__orn { margin-bottom: clamp(36px, 5vw, 64px); }
+  .nums__grid { display: grid; grid-template-columns: repeat(5, 1fr); margin-bottom: clamp(36px, 5vw, 64px); }
+  .num { padding: 0 clamp(10px, 2vw, 28px); border-left: 1px solid var(--rule); display: flex; flex-direction: column; gap: 10px; }
+  .num:first-child { border-left: 0; padding-left: 0; }
+  .num__v { font-family: var(--serif); font-weight: 300; font-size: clamp(2.8rem, 1.2rem + 4vw, 5.6rem); letter-spacing: -0.04em; line-height: 0.9; color: var(--azul); font-variation-settings: 'opsz' 144; }
+  .num__l { font-size: 0.92rem; color: var(--muted); max-width: 20ch; }
+  @media (max-width: 900px) { .nums__grid { grid-template-columns: repeat(2, 1fr); row-gap: 36px; } .num:nth-child(odd) { border-left: 0; padding-left: 0; } .num:last-child { grid-column: span 2; } }
+
+  /* ---- Encabezados de sección ---- */
+  .sech { max-width: 900px; margin-bottom: clamp(44px, 6vw, 88px); }
+  .sech h2 { margin-top: 20px; }
+
+  /* ---- Dos mundos ---- */
+  .worlds__row { display: flex; gap: clamp(16px, 2vw, 28px); }
+  .world { flex: 1; display: flex; flex-direction: column; gap: 24px; transition: flex 0.9s var(--ease); }
+  .world:hover { flex: 1.3; }
+  .world__media { height: clamp(380px, 52vw, 620px); transition: border-radius 0.9s var(--ease); }
+  .world__media video { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s var(--ease); }
+  .world:hover .world__media video { transform: scale(1.04); }
+  .world__body { display: grid; gap: 8px; }
+  .world__t { font-size: clamp(2.8rem, 1rem + 4vw, 5rem); font-weight: 300; }
+  .world--te .world__t em { color: var(--te); }
+  .world__n { color: var(--muted); }
+  .world__lines { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 10px; }
+  .world__lines li { font-size: 0.78rem; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--crema); }
+  @media (max-width: 800px) { .worlds__row { flex-direction: column; } .world:hover { flex: 1; } .world__media { height: 340px; } }
+
+  /* ---- Estante ---- */
+  .shelf__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: clamp(36px, 5vw, 64px); }
+  .shelf__nav { display: flex; gap: 8px; }
+  .shelf__nav :global(.flip) { transform: rotate(180deg); }
+  .shelf__track { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px var(--gutter) 16px; scrollbar-width: none; scroll-padding-inline: var(--gutter); }
+  .shelf__track::-webkit-scrollbar { display: none; }
+  .shelf__track :global(.shelf__card) { flex: none; width: clamp(240px, 22vw, 300px); scroll-snap-align: start; }
+  .shelf__all { flex: none; width: clamp(240px, 22vw, 300px); border-radius: 22px; background: var(--azul); color: var(--porcelana); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; scroll-snap-align: start; transition: background-color 0.4s; }
+  .shelf__all:hover { background: var(--noche); }
+  .shelf__allicon { width: 60px; height: 60px; border-radius: 50%; background: var(--oro); color: var(--noche); display: grid; place-items: center; align-self: flex-end; }
+  @media (max-width: 700px) { .shelf__nav { display: none; } }
+
+  /* ---- Origen ---- */
+  .origin__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .origin__img { aspect-ratio: 4 / 5; }
+  .origin__copy h2 { margin-top: 20px; }
+  .origin__copy .lede { margin-top: 24px; }
+  .origin__rule { margin: 36px 0; }
+  .origin__list { font-size: clamp(1.4rem, 1rem + 1.2vw, 2rem); line-height: 1.3; margin: 12px 0 14px; color: var(--porcelana); }
+  .origin__list i { color: var(--oro); font-style: normal; }
+  @media (max-width: 900px) { .origin__grid { grid-template-columns: 1fr; } .origin__img { aspect-ratio: 4 / 3.6; } }
+
+  /* ---- Historia ---- */
+  .tl { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+  .tl::before { content: ''; position: absolute; left: 0; right: 0; top: calc(clamp(2.6rem, 1rem + 3vw, 4.4rem) + 18px); height: 1px; background: var(--laton); opacity: 0.5; }
+  .tl__i { padding-right: 24px; }
+  .tl__y { display: block; font-family: var(--serif); font-weight: 300; font-size: clamp(2.6rem, 1rem + 3vw, 4.4rem); letter-spacing: -0.04em; line-height: 1; color: var(--azul); }
+  .tl__dot { display: block; width: 13px; height: 13px; border-radius: 50%; background: var(--porcelana); box-shadow: inset 0 0 0 2px var(--laton); margin: 12px 0 16px; position: relative; }
+  .tl__i p { color: var(--muted); max-width: 30ch; }
+  .story__plant { position: relative; margin-top: clamp(56px, 8vw, 110px); }
+  .story__plantimg { height: clamp(320px, 52vw, 640px); overflow: hidden; }
+  .story__plantimg img { width: 100%; height: 100%; object-fit: cover; }
+  .story__plant figcaption { position: absolute; left: 0; right: 0; bottom: 28px; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--porcelana); }
+  .story__plant::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(6, 26, 64, 0.65), transparent 45%); pointer-events: none; }
+  .story__plant figcaption { z-index: 1; }
+  @media (max-width: 900px) { .tl { grid-template-columns: 1fr 1fr; row-gap: 32px; } .tl::before { display: none; } }
+
+  /* ---- Sustentabilidad ---- */
+  .eco__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .eco__copy h2 { margin-top: 20px; }
+  .eco__copy h2 :global(em) { color: var(--te); }
+  .eco__copy .lede { margin-top: 24px; }
+  .cycle { list-style: none; padding: 0; margin: 32px 0; display: grid; gap: 2px; }
+  .cycle li { display: flex; gap: 16px; align-items: baseline; padding: 14px 0; border-top: 1px solid var(--rule); }
+  .cycle li span { font-family: var(--serif); font-style: italic; color: var(--te); font-size: 1.3rem; }
+  .eco__media { aspect-ratio: 4 / 4.6; }
+  .eco__media video { width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; }
+  @media (max-width: 900px) { .eco__grid { grid-template-columns: 1fr; } .eco__media { order: -1; aspect-ratio: 4 / 3.4; } }
+
+  /* ---- Empresas ---- */
+  .biz__grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .biz__img { aspect-ratio: 4 / 5; }
+  .biz h2 { margin-top: 20px; }
+  .biz__cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
+  .bcard { padding: 22px; border-radius: 20px; background: rgba(251, 248, 242, 0.06); box-shadow: inset 0 0 0 1px var(--rule); display: grid; gap: 10px; align-content: start; transition: background-color 0.4s, color 0.4s, transform 0.5s var(--ease); }
+  .bcard :global(svg) { color: var(--oro); }
+  .bcard h3 { font-size: 1.35rem; font-weight: 380; }
+  .bcard p { font-size: 0.9rem; color: var(--muted); }
+  .bcard:hover { background: var(--oro); color: var(--noche); transform: translateY(-4px); }
+  .bcard:hover p, .bcard:hover :global(svg) { color: var(--noche); }
+  .biz__ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  @media (max-width: 1000px) { .biz__grid { grid-template-columns: 1fr; } .biz__img { aspect-ratio: 4 / 3; } .biz__cards { grid-template-columns: 1fr; } }
+
+  /* ---- Guía ---- */
+  .guide__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .guide h2 { margin-top: 20px; }
+  .guide .lede { margin-top: 22px; }
+  .guide__cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .gcard { padding: clamp(24px, 3vw, 36px); border-radius: 999px 999px 22px 22px; background: var(--crema); min-height: 380px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; }
+  .gcard h3 { font-size: 2.2rem; font-weight: 300; }
+  .gcard p { color: var(--muted); }
+  .gcard--dark { background: var(--cafe); color: var(--porcelana); --muted: rgba(251, 248, 242, 0.75); --accent: var(--oro); }
+  @media (max-width: 900px) { .guide__grid { grid-template-columns: 1fr; } .gcard { min-height: 300px; } }
+</style>

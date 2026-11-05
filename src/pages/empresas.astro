@@ -1,0 +1,127 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Lines from '../components/Lines.astro';
+import { url, media, company, provincias } from '../lib/site';
+const espresso = [
+  ['Producto seleccionado', 'Cafés de la más alta calidad y los complementos para un servicio integral: tés, hierbas, endulzantes, saborizadores y especias.'],
+  ['Vajilla para el servicio', 'Vajilla diseñada especialmente para el servicio de cafetería.'],
+  ['Asistencia especializada', 'Especialistas en café asesoran y capacitan al personal en la preparación de una correcta infusión.'],
+  ['Maquinarias y equipamiento', 'La maquinaria y el equipamiento adecuados para preparar y servir un gran café.'],
+];
+---
+<Base title="Para empresas" tone="light">
+  <section class="bh t-azul">
+    <div class="wrap bh__grid">
+      <div>
+        <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><span>Para empresas</span></nav>
+        <p class="label">IV · Negocios</p>
+        <Lines as="h1" class="d1" text="Un socio con|_cien años_|de oficio." />
+        <p class="lede" data-rv>Gastronomía, comercios, distribuidores e importadores: soluciones para servir y vender La Virginia, con el respaldo de una empresa líder.</p>
+        <div class="bh__ctas" data-rv><a class="btn btn--oro" href="#cliente">Quiero ser cliente <Icon name="arrow" /></a><a class="btn btn--line" href={url('/pedido/')}>Armar pedido</a></div>
+      </div>
+      <div class="bh__img arch"><img src={media('cafeteria.avif')} alt="Barra de cafetería" width="900" height="1125" fetchpriority="high" /></div>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="espresso">
+    <div class="split">
+      <div>
+        <p class="label">La Virginia Espresso</p>
+        <Lines class="d2" text="El mejor café|_fuera de casa._" />
+        <p class="lede" data-rv>Un concepto orientado a ampliar la propuesta de tu comercio, generando ambientes elegantes e innovadores con un servicio esmerado y asistencia profesional de primer nivel.</p>
+      </div>
+      <ol class="feat">
+        {espresso.map(([t, d], i) => (
+          <li data-rv style={`--d:${i * 90}`}><span class="roman">{['i', 'ii', 'iii', 'iv'][i]}.</span><div><h3>{t}</h3><p>{d}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="t-crema sec" id="distribucion">
+    <div class="wrap trio">
+      <article class="tcard" data-rv>
+        <Icon name="truck" size={32} />
+        <p class="tcard__n onum">16</p>
+        <h3>Sucursales en todo el país</h3>
+        <p>Desde 1940, un plan estratégico de distribución lleva La Virginia a prácticamente toda la Argentina.</p>
+      </article>
+      <article class="tcard tcard--blue" data-rv style="--d:120" id="exterior">
+        <Icon name="globe" size={32} />
+        <p class="tcard__n onum">+18</p>
+        <h3>Países de exportación</h3>
+        <p>Acuerdos de representación y distribución por país o región, y dos empresas propias en Uruguay.</p>
+      </article>
+      <article class="tcard" data-rv style="--d:240">
+        <Icon name="shield" size={32} />
+        <p class="tcard__n">FSSC</p>
+        <h3>22000 certificado</h3>
+        <p>Sistema de Gestión de Inocuidad y Calidad bajo norma internacional, con insumos de más de 20 países.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="cliente">
+    <div class="split">
+      <div>
+        <p class="label">Quiero ser cliente</p>
+        <Lines class="d2" text="Hablemos de|tu _negocio._" />
+        <p class="lede" data-rv>Contanos qué necesitás y te contacta la sucursal que abastece a tu zona. Comercio exterior: atención de 8 a 17 h (GMT −3).</p>
+        <p class="phone" data-rv><Icon name="phone" /> <a href={company.phoneHref}>{company.phone}</a></p>
+      </div>
+      <form class="cform" data-demo>
+        <div class="row2">
+          <div class="field"><label for="n">Nombre y apellido</label><input class="input" id="n" required autocomplete="name" /></div>
+          <div class="field"><label for="e">Empresa</label><input class="input" id="e" required autocomplete="organization" /></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="m">Email</label><input class="input" id="m" type="email" required autocomplete="email" /></div>
+          <div class="field"><label for="p">Provincia / país</label><select class="input" id="p"><option value="">Elegí</option>{provincias.map((x) => <option>{x}</option>)}</select></div>
+        </div>
+        <fieldset class="picks"><legend class="label" style="--accent:var(--muted)">Me interesa</legend>
+          {['La Virginia Espresso', 'Reventa en comercio', 'Distribución', 'Exportación'].map((x) => <label class="pick"><input type="checkbox" /><span>{x}</span></label>)}
+        </fieldset>
+        <div class="field"><label for="c">Mensaje</label><textarea class="input" id="c"></textarea></div>
+        <button class="btn" type="submit" style="justify-self:start">Enviar consulta <Icon name="arrow" /></button>
+        <p data-msg style="font-size:.86rem;color:var(--muted)">Formulario de demostración: no se envía ningún dato.</p>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .bh { padding-top: calc(var(--header-h) + 40px); padding-bottom: clamp(56px, 7vw, 100px); }
+  .bh .crumbs { color: rgba(251, 248, 242, 0.6); }
+  .bh__grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(28px, 5vw, 80px); align-items: end; }
+  .bh h1 { margin-top: 18px; }
+  .bh h1 :global(em) { color: var(--oro); }
+  .bh .lede { margin-top: 24px; }
+  .bh__ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+  .bh__img { aspect-ratio: 4 / 5; max-height: 72vh; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 96px); align-items: start; }
+  .split h2 { margin-top: 18px; }
+  .split .lede { margin-top: 22px; }
+  .feat { list-style: none; padding: 0; display: grid; }
+  .feat li { display: grid; grid-template-columns: 48px 1fr; gap: 12px; padding: 24px 0; border-top: 1px solid var(--rule); }
+  .feat h3 { font-size: 1.5rem; font-weight: 360; }
+  .feat p { color: var(--muted); margin-top: 6px; }
+  .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .tcard { padding: clamp(24px, 3vw, 36px); border-radius: 26px; background: var(--porcelana); box-shadow: inset 0 0 0 1px var(--rule); display: grid; gap: 10px; align-content: start; }
+  .tcard :global(svg) { color: var(--azul); }
+  .tcard__n { font-family: var(--serif); font-weight: 300; font-size: clamp(3rem, 1rem + 4vw, 5.2rem); letter-spacing: -0.04em; line-height: 1; color: var(--azul); margin-top: 18px; }
+  .tcard h3 { font-size: 1.4rem; font-weight: 360; }
+  .tcard p { color: var(--muted); }
+  .tcard--blue { background: var(--azul); color: var(--porcelana); box-shadow: none; --muted: rgba(251, 248, 242, 0.75); }
+  .tcard--blue :global(svg), .tcard--blue .tcard__n { color: var(--oro); }
+  .phone { display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; font-family: var(--serif); font-size: 1.8rem; color: var(--azul); }
+  .cform { display: grid; gap: 16px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .picks { border: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .picks legend { margin-bottom: 10px; }
+  .pick input { position: absolute; opacity: 0; pointer-events: none; }
+  .pick span { display: inline-flex; align-items: center; height: 42px; padding: 0 16px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--rule); cursor: pointer; font-size: 0.88rem; font-weight: 600; }
+  .pick input:checked + span { background: var(--azul); color: var(--porcelana); box-shadow: none; }
+  .pick input:focus-visible + span { outline: 2px solid var(--oro-2); outline-offset: 2px; }
+  @media (max-width: 900px) { .bh__grid, .split { grid-template-columns: 1fr; } .bh__img { aspect-ratio: 4 / 3; } .trio { grid-template-columns: 1fr; } .row2 { grid-template-columns: 1fr; } }
+</style>

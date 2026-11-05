@@ -1,0 +1,1886 @@
+[
+ {
+  "id": 1216,
+  "slug": "te-negro-clasico",
+  "name": "Té Negro Clásico",
+  "fullName": "La Virginia – Té Negro Clásico",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Té negro",
+  "categoryOrder": 1,
+  "description": [
+   "El té es mucho más que una bebida: es la esencia de la conexión con la naturaleza en su estado más puro para ofrecer una experiencia sensorial única en cada taza.",
+   "Las hojas y brotes de la planta Camellia Sinensis son cuidadosamente cultivados en la región tealera argentina, la más austral del mundo. Con la más cálida luz solar y lluvias ideales se cosechan en su punto máximo de frescura.",
+   "De inmediato comienza el secado, enrollado y reposo que permite la oxidación natural de las hojas. Estas conservan así su riqueza aromática original desarrollando su sabor distintivo."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo con sutil halo dorado"
+   },
+   {
+    "k": "Sabor",
+    "v": "cálido, de final ligero y redondo"
+   },
+   {
+    "k": "Aroma",
+    "v": "notas herbales"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "100 saquitos",
+   "25 saquitos",
+   "50 saquitos"
+  ],
+  "image": "te-negro-clasico",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-clasico/"
+ },
+ {
+  "id": 3746,
+  "slug": "te-negro-intenso",
+  "name": "Té negro Intenso",
+  "fullName": "La Virginia – Té negro Intenso",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Té negro",
+  "categoryOrder": 1,
+  "description": [
+   "El té es mucho más que una bebida: es la esencia de la conexión con la naturaleza en su estado más puro para ofrecer una experiencia sensorial única en cada taza.",
+   "Un blend que combina nuestro té negro original con hojas de las mejores plantaciones de té de África.",
+   "El constante equilibrio de humedad y temperaturas de las tierras altas de Kenia, da lugar al cultivo de un té intenso y aromático.",
+   "El resultado: una infusión con cuerpo, enérgica y envolvente."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "cobrizo brillante"
+   },
+   {
+    "k": "Sabor",
+    "v": "robusto, que perdura en la boca"
+   },
+   {
+    "k": "Aroma",
+    "v": "marcadas notas florales"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 4,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-negro-intenso",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-intenso/"
+ },
+ {
+  "id": 964,
+  "slug": "virgin-islands-earl-grey",
+  "name": "Virgin Islands – Earl Grey",
+  "fullName": "Virgin Islands – Earl Grey",
+  "brand": "Virgin Islands",
+  "line": "te",
+  "category": "Virgin Islands",
+  "categoryOrder": 2,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "1000 g",
+   "125 g",
+   "250 g",
+   "500 g"
+  ],
+  "image": "virgin-islands-earl-grey",
+  "source": "https://www.lavirginia.com.ar/producto/virgin-islands-earl-grey/"
+ },
+ {
+  "id": 1262,
+  "slug": "virgin-islands-te-clasico",
+  "name": "Virgin Islands – Té Clásico",
+  "fullName": "Virgin Islands – Té Clásico",
+  "brand": "Virgin Islands",
+  "line": "te",
+  "category": "Virgin Islands",
+  "categoryOrder": 2,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "100 saquitos",
+   "25 saquitos",
+   "50 saquitos"
+  ],
+  "image": "virgin-islands-te-clasico",
+  "source": "https://www.lavirginia.com.ar/producto/virgin-islands-te-clasico/"
+ },
+ {
+  "id": 1242,
+  "slug": "te-verde",
+  "name": "Té Verde",
+  "fullName": "La Virginia – Té Verde",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Té verde",
+  "categoryOrder": 3,
+  "description": [
+   "Un ritual de bienestar integral para transformar tu día a día. Los hábitos saludables se construyen paso a paso, y pueden comenzar con algo tan simple",
+   "como disfrutar de una taza de té verde, que contiene antioxidantes naturales.",
+   "Las hojas de la planta Camellia Sinensis se cosechan en su punto máximo de frescura.",
+   "Son tratadas con vapor para evitar su oxidación. Desarrollan así su sabor característico y color verde vibrante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "Verde con tintes dorados"
+   },
+   {
+    "k": "Sabor",
+    "v": "intenso y astringente, cítrico"
+   },
+   {
+    "k": "Aroma",
+    "v": "marcadas notas herbáceas"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-verde",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-verde/"
+ },
+ {
+  "id": 1244,
+  "slug": "te-verde-citrus",
+  "name": "Té Verde Citrus",
+  "fullName": "La Virginia – Té Verde Citrus",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Té verde",
+  "categoryOrder": 3,
+  "description": [
+   "Un ritual de bienestar integral para transformar tu día a día. Los hábitos saludables se construyen paso a paso, y pueden comenzar con algo tan simple como disfrutar de una taza de té verde, que contiene antioxidantes naturales.",
+   "Las hojas de la planta Camellia Sinensis se cosechan en su punto máximo de frescura. Son tratadas con vapor para evitar su oxidación y desarrollar así su sabor característico. Se combinan con delicadas notas cítricas para disfrutar de una bebida más aromática y refrescante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "Verde con tintes dorados"
+   },
+   {
+    "k": "Sabor",
+    "v": "Alimonado y cítrico"
+   },
+   {
+    "k": "Aroma",
+    "v": "Notas a durazno"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-verde-citrus",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-verde-citrus/"
+ },
+ {
+  "id": 1238,
+  "slug": "te-verde-jazmin",
+  "name": "Té Verde Jazmín",
+  "fullName": "La Virginia – Té Verde Jazmín",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Té verde",
+  "categoryOrder": 3,
+  "description": [
+   "Un ritual de bienestar integral para transformar tu día a día. Los hábitos saludables se construyen paso a paso, y pueden comenzar con algo tan simple como disfrutar de una taza de té verde, que contiene antioxidantes naturales.",
+   "Las hojas de la planta Camellia Sinensis se cosechan en su punto máximo de frescura. Son tratadas con vapor para evitar su oxidación y desarrollar así su sabor característico. Se combinan con delicadas notas a jazmín para disfrutar de una bebida más aromática."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "Verde con tintes dorados"
+   },
+   {
+    "k": "Sabor",
+    "v": "Dulce y herbal"
+   },
+   {
+    "k": "Aroma",
+    "v": "Marcadas notas florales"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-verde-jazmin",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-especial-jazmin/"
+ },
+ {
+  "id": 1232,
+  "slug": "te-durazno",
+  "name": "Té Durazno",
+  "fullName": "La Virginia – Té Durazno",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "Las notas dulces y sutilmente ácidas del durazno brindan una experiencia suave y refrescante. La astringencia característica del té negro encuentra su perfecta armonía en esta bebida equilibrada y deliciosa."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo con sutil halo dorado"
+   },
+   {
+    "k": "Sabor",
+    "v": "suave y dulce"
+   },
+   {
+    "k": "Aroma",
+    "v": "marcadas notas a melocotón"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-durazno",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-durazno/"
+ },
+ {
+  "id": 1222,
+  "slug": "te-frutas-tropicales",
+  "name": "Té Frutas Tropicales",
+  "fullName": "La Virginia – Té Frutas Tropicales",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "El aroma exótico y el sabor ligeramente ácido de esta infusión despiertan los sentidos para transportarte a un paraíso tropical.",
+   "Las notas frutales le dan un toque de frescura a la astringencia característica del té negro."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo con sutil halo dorado"
+   },
+   {
+    "k": "Sabor",
+    "v": "ananá, mango y banana"
+   },
+   {
+    "k": "Aroma",
+    "v": "frutal y exótico"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-frutas-tropicales",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-frutas-tropicales/"
+ },
+ {
+  "id": 1234,
+  "slug": "te-frutilla",
+  "name": "Té Frutilla",
+  "fullName": "La Virginia – Té Frutilla",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "La astringencia característica del té negro se combina con dulces notas a frutilla.",
+   "Sus matices ligeramente ácidos despiertan los sentidos para disfrutar de una bebida deliciosa y revitalizante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo con sutil halo dorado"
+   },
+   {
+    "k": "Sabor",
+    "v": "dulce y sutilmente ácido"
+   },
+   {
+    "k": "Aroma",
+    "v": "marcadas notas a frutilla"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-frutilla",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-frutilla/"
+ },
+ {
+  "id": 1218,
+  "slug": "te-limon",
+  "name": "Té Limón",
+  "fullName": "La Virginia – Té Limón",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "Esta infusión combina la astringencia característica del té negro con el aroma fresco del limón, creando una experiencia revitalizante al paladar. Las marcadas notas cítricas aportan una ligera acidez que realza los matices complejos del té.",
+   "Disfrutá de una bebida deliciosa y llena de carácter."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Fortificado con Vitamina C",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Sabor",
+    "v": "ámbar"
+   },
+   {
+    "k": "Color",
+    "v": "cítrico, refrescante"
+   },
+   {
+    "k": "Aroma",
+    "v": "marcadas notas a limón"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 4,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-limon",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-limon/"
+ },
+ {
+  "id": 1220,
+  "slug": "te-mandarina-naranja-y-pomelo",
+  "name": "Té Mandarina, Naranja y Pomelo",
+  "fullName": "La Virginia – Té Mandarina, Naranja y Pomelo",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "Las notas cítricas de la mandarina y la naranja se combinan con el toque fresco y ligeramente amargo del pomelo.",
+   "La astringencia característica del té negro encuentra su perfecta armonía en esta bebida dulce y equilibrada."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo con sutil halo dorado"
+   },
+   {
+    "k": "Sabor",
+    "v": "dulce, con notas cítricas"
+   },
+   {
+    "k": "Aroma",
+    "v": "fresco y ligero"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-mandarina-naranja-y-pomelo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-mandarina-naranja-y-pomelo/"
+ },
+ {
+  "id": 1228,
+  "slug": "te-manzana-con-canela",
+  "name": "Té Manzana con Canela",
+  "fullName": "La Virginia – Té Manzana con Canela",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "La astringencia característica del té negro se combina con dulces notas a manzana y toques especiados de canela.",
+   "El resultado: una bebida exquista, cálida y reconfortante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo suave"
+   },
+   {
+    "k": "Sabor",
+    "v": "dulce con sutiles notas picantes"
+   },
+   {
+    "k": "Aroma",
+    "v": "amaderado"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 4,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-manzana-con-canela",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-manzana-con-canela/"
+ },
+ {
+  "id": 1230,
+  "slug": "te-maracuya",
+  "name": "Té Maracuyá",
+  "fullName": "La Virginia – Té Maracuyá",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "El aroma exótico y dulce del maracuyá envuelve los sentidos, mientras su sabor ligeramente ácido llena el paladar de notas frutales. Disfrutá de una bebida refrescante y revitalizante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo con sutil halo dorado"
+   },
+   {
+    "k": "Sabor",
+    "v": "dulce y refrescante"
+   },
+   {
+    "k": "Aroma",
+    "v": "notas tropicales"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 4,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-maracuya",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-maracuya/"
+ },
+ {
+  "id": 1226,
+  "slug": "te-rosa-mosqueta-y-manzanilla",
+  "name": "Té Rosa Mosqueta y Manzanilla",
+  "fullName": "La Virginia – Té Rosa Mosqueta y Manzanilla",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Saborizados",
+  "categoryOrder": 4,
+  "description": [
+   "El té negro en una armoniosa fusión de aromas y sabores exquisitos, da como resultado una bebida frutal y vibrante, que envuelve los sentidos y cautiva en cada sorbo, ideal para disfrutar tanto caliente como fría.",
+   "Este blend combina en equilibrio la suavidad de la manzanilla con las delicadas notas florales de rosa mosqueta.",
+   "El toque ácido del hibiscus envuelve los sentidos y da como resultado una infusión dulce y refrescante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "rojizo suave con tintes dorados"
+   },
+   {
+    "k": "Sabor",
+    "v": "dulce y frutal"
+   },
+   {
+    "k": "Aroma",
+    "v": "marcadas notas florales"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 2,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-rosa-mosqueta-y-manzanilla",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-rosa-mosqueta-y-manzanilla/"
+ },
+ {
+  "id": 1236,
+  "slug": "te-chai",
+  "name": "Té Chai",
+  "fullName": "La Virginia – Té Chai",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Especiales",
+  "categoryOrder": 5,
+  "description": [
+   "El té es mucho más que una bebida: es la esencia de la conexión con la naturaleza en su estado más puro para ofrecer una experiencia sensorial única en cada taza.",
+   "El té chai es una tradición milenaria de la India, que nace de la fusión armoniosa entre el té negro y especias. El termino Chai es una versión abreviada de la palabra Masala Chai que significa té especiado en hindi.",
+   "La canela aporta dulzor y el jengibre frescura. Junto con el sutil toque picante del clavo de olor, resultan en una infusión exótica, vibrante y reconfortante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "Rojizo"
+   },
+   {
+    "k": "Sabor",
+    "v": "Dulce y picante"
+   },
+   {
+    "k": "Aroma",
+    "v": "Especiado"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 4,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-chai",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-especial-chai/"
+ },
+ {
+  "id": 1224,
+  "slug": "te-con-canela",
+  "name": "Té con Canela",
+  "fullName": "La Virginia – Té con Canela",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Especiales",
+  "categoryOrder": 5,
+  "description": [
+   "El té es mucho más que una bebida: es la esencia de la conexión con la naturaleza en su estado más puro para ofrecer una experiencia sensorial única en cada taza.",
+   "Las hojas y brotes de la planta Camellia Sinensis se cosechan en su punto máximo de frescura. De inmediato comienza el secado, enrollado y reposo que permite la oxidación natural de las hojas. Así, conservan su riqueza aromática original y desarrollan su sabor distintivo.",
+   "En este blend, la canela aporta notas especiadas con matices dulces y un sutil toque picante que complementa la astringencia característica del té negro.",
+   "El resultado: una bebida cálida y reconfortante."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "Rojizo"
+   },
+   {
+    "k": "Sabor",
+    "v": "Dulce y picante"
+   },
+   {
+    "k": "Aroma",
+    "v": "Amaderado"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 4,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-con-canela",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-con-canela/"
+ },
+ {
+  "id": 1240,
+  "slug": "te-rojo",
+  "name": "Té Rojo",
+  "fullName": "La Virginia – Té Rojo",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Especiales",
+  "categoryOrder": 5,
+  "description": [
+   "El té es mucho más que una bebida: es la esencia de la conexión con la naturaleza en su estado más puro para ofrecer una experiencia sensorial única en cada taza.",
+   "El té rojo Pu Erh es una bebida legendaria originaria del condado de Pu-Erh, en China, apreciada durante siglos por emperadores y monjes.",
+   "Las hojas y brotes de la planta Camellia Sinensis se cosechan en su punto máximo de frescura y luego se dejan madurar en barricas de madera noble. Esta milenaria tradición confiere al té rojo su sabor y color característico."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "Rojo intenso"
+   },
+   {
+    "k": "Sabor",
+    "v": "Terroso"
+   },
+   {
+    "k": "Aroma",
+    "v": "Madera intensa"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 5,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-rojo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-rojo/"
+ },
+ {
+  "id": 4128,
+  "slug": "te-verde-con-jengibre",
+  "name": "Té verde con Jengibre",
+  "fullName": "La Virginia – Té verde con Jengibre",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Especiales",
+  "categoryOrder": 5,
+  "description": [
+   "Disfrutá en cada taza el bienestar integral que solo la naturaleza puede ofrecer. Los hábitos saludables se construyen paso a paso y pueden comenzar con algo tan simple como disfrutar de una infusión de jengibre para transformar tu día.",
+   "Desde hace siglos, el jengibre se ha utilizado en muchas infusiones ayurvédicas acompañando la búsqueda del equilibrio entre cuerpo, mente y espíritu.",
+   "Su delicioso sabor intenso y picante invita a te sientas naturalmente energizado para aprovechar al máximo cada día."
+  ],
+  "claims": [
+   "Contiene antioxidantes",
+   "Hecho a base de plantas",
+   "Sabor para tu hidratación",
+   "Saquito de papel hecho a base de plantas"
+  ],
+  "notes": [
+   {
+    "k": "Color",
+    "v": "verde con tintes dorados"
+   },
+   {
+    "k": "Sabor",
+    "v": "especiados con nota picante"
+   },
+   {
+    "k": "Aroma",
+    "v": "fresco y cítrico"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 5,
+   "max": 5
+  },
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "te-verde-con-jengibre",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-te-verde-con-jengibre/"
+ },
+ {
+  "id": 1246,
+  "slug": "herboristeria-boldo",
+  "name": "Boldo",
+  "fullName": "La Virginia – Herboristería – Boldo",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [
+   "Disfrutá en cada taza el bienestar integral que solo la naturaleza puede ofrecer. Nuestras infusiones de hierbas, cuidadosamente seleccionadas, te conectan con los beneficios ancestrales de la madre tierra.",
+   "Tisana elegida por excelencia para un momento de tranquilidad después de las comidas."
+  ],
+  "claims": [
+   "Hecho a base de plantas",
+   "Libre de cafeína",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Especie botánica",
+    "v": "Peumus boldus"
+   },
+   {
+    "k": "Sabor",
+    "v": "Intenso, alcanforado"
+   },
+   {
+    "k": "Aroma",
+    "v": "Herbal,penetrante"
+   }
+  ],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos",
+   "25 Sobres",
+   "50 saquitos",
+   "50 Sobres"
+  ],
+  "image": "herboristeria-boldo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-boldo/"
+ },
+ {
+  "id": 1432,
+  "slug": "herboristeria-cedron",
+  "name": "Cedrón",
+  "fullName": "La Virginia – Herboristería – Cedrón",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [
+   "Disfrutá en cada taza el bienestar integral que solo la naturaleza puede ofrecer. Nuestras infusiones de hierbas, cuidadosamente seleccionadas, te conectan con los beneficios ancestrales de la madre tierra.",
+   "Una infusión alimonada y refrescante, perfecta para acompañar la sobremesa o un momento especial y relajante."
+  ],
+  "claims": [
+   "Hecho a base de plantas",
+   "Libre de cafeína",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Especie botánica",
+    "v": "Aloysia citrodora"
+   },
+   {
+    "k": "Sabor",
+    "v": "Fresco, sutiles notas cítricas"
+   },
+   {
+    "k": "Aroma",
+    "v": "Herbal, alimonado"
+   }
+  ],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos",
+   "25 Sobres",
+   "50 Sobres"
+  ],
+  "image": "herboristeria-cedron",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-cedron/"
+ },
+ {
+  "id": 1252,
+  "slug": "herboristeria-manzanilla",
+  "name": "Manzanilla",
+  "fullName": "La Virginia – Herboristería – Manzanilla",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [
+   "Disfrutá en cada taza el bienestar integral que solo la naturaleza puede ofrecer.",
+   "Nuestras infusiones de hierbas, cuidadosamente seleccionadas, te conectan con los beneficios ancestrales de la madre tierra.",
+   "Una infusión que invita a sentirse naturalmente aliviado y relajado."
+  ],
+  "claims": [
+   "Hecho a base de plantas",
+   "Libre de cafeína",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Especie botánica",
+    "v": "Matricaria chamomilla"
+   },
+   {
+    "k": "Sabor",
+    "v": "Dulce, frutal"
+   },
+   {
+    "k": "Aroma",
+    "v": "Notas florales, manzana"
+   }
+  ],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-manzanilla",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-manzanilla/"
+ },
+ {
+  "id": 1254,
+  "slug": "herboristeria-manzanilla-con-anis",
+  "name": "Manzanilla con Anís",
+  "fullName": "La Virginia – Herboristería – Manzanilla con Anís",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-manzanilla-con-anis",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-manzanilla-con-anis/"
+ },
+ {
+  "id": 1256,
+  "slug": "herboristeria-menta-peperina",
+  "name": "Menta Peperina",
+  "fullName": "La Virginia – Herboristería – Menta Peperina",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-menta-peperina",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-menta-peperina/"
+ },
+ {
+  "id": 1258,
+  "slug": "herboristeria-mezcla-de-hierbas-naturales",
+  "name": "Mezcla de Hierbas Naturales",
+  "fullName": "La Virginia – Herboristería – Mezcla de Hierbas Naturales",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [
+   "Disfrutá en cada taza el bienestar integral que solo la naturaleza puede ofrecer. Nuestras infusiones de hierbas, cuidadosamente seleccionadas, te conectan con los beneficios ancestrales de la madre tierra.",
+   "Un blend que despierta naturalmente sensaciones de frescura y alivio. La mejor opción para cualquier momento del día."
+  ],
+  "claims": [
+   "Hecho a base de plantas",
+   "Libre de cafeína",
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Especie botánica",
+    "v": "Mentha spp, Matricaria chamomilla,Peumus boldus, Aloysia citrodora"
+   },
+   {
+    "k": "Sabor",
+    "v": "Refrescante, intenso"
+   },
+   {
+    "k": "Aroma",
+    "v": "Herbal, floral"
+   }
+  ],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-mezcla-de-hierbas-naturales",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-mezcla-de-hierbas-naturales/"
+ },
+ {
+  "id": 1248,
+  "slug": "herboristeria-tilo",
+  "name": "Tilo",
+  "fullName": "La Virginia – Herboristería – Tilo",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [
+   "Disfrutá en cada taza el bienestar integral que solo la naturaleza puede ofrecer. Nuestras infusiones de hierbas, cuidadosamente seleccionadas, te conectan con los beneficios ancestrales de la madre tierra.",
+   "Tisana que invita a dedicarse un instante de calma y serenidad.",
+   "Ideal para disfrutar antes de un descanso."
+  ],
+  "claims": [
+   "Hecho a base de plantas",
+   "Libre de cafeína"
+  ],
+  "notes": [
+   {
+    "k": "Especie botánica",
+    "v": "Tilia spp"
+   },
+   {
+    "k": "Sabor",
+    "v": "Ligeras notas herbales"
+   },
+   {
+    "k": "Aroma",
+    "v": "Floral"
+   }
+  ],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-tilo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-tilo/"
+ },
+ {
+  "id": 1250,
+  "slug": "herboristeria-tilo-manzanilla-y-cedron",
+  "name": "Tilo, Manzanilla y Cedrón",
+  "fullName": "La Virginia – Herboristería – Tilo, Manzanilla y Cedrón",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Herboristería",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-tilo-manzanilla-y-cedron",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-tilo-manzanilla-y-cedron/"
+ },
+ {
+  "id": 3351,
+  "slug": "herboristeria-equilibrio-detox",
+  "name": "Detox",
+  "fullName": "La Virginia – Herboristería Equilibrio – Detox",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Equilibrio",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-equilibrio-detox",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-equilibrio-detox/"
+ },
+ {
+  "id": 3350,
+  "slug": "herboristeria-equilibrio-fluir",
+  "name": "Fluir",
+  "fullName": "La Virginia – Herboristería Equilibrio – Fluir",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Equilibrio",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [],
+  "image": "herboristeria-equilibrio-fluir",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-equilibrio-fluir/"
+ },
+ {
+  "id": 3344,
+  "slug": "herboristeria-equilibrio-inspirar",
+  "name": "Inspirar",
+  "fullName": "La Virginia – Herboristería Equilibrio – Inspirar",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Equilibrio",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "25 saquitos"
+  ],
+  "image": "herboristeria-equilibrio-inspirar",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-equilibrio-inspirar/"
+ },
+ {
+  "id": 3349,
+  "slug": "herboristeria-equilibrio-relajar",
+  "name": "Relajar",
+  "fullName": "La Virginia – Herboristería Equilibrio – Relajar",
+  "brand": "La Virginia",
+  "line": "te",
+  "category": "Equilibrio",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [],
+  "image": "herboristeria-equilibrio-relajar",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-herboristeria-equilibrio-relajar/"
+ },
+ {
+  "id": 3949,
+  "slug": "cafe-tostado-intenso",
+  "name": "Café Tostado Intenso",
+  "fullName": "La Virginia – Café Tostado Intenso",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Tostado",
+  "categoryOrder": 1,
+  "description": [
+   "Para elaborar La Virginia Tostado Intenso seleccionamos nuestros mejores granos de diversos orígenes y cuidadosamente los tostamos a un punto alto hasta lograr una bebida con carácter que perdura en la boca. Ideal para los amantes del café con personalidad."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Descripción general",
+    "v": "Un café de buen cuerpo con un armonioso residual en boca"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 5,
+   "max": 5
+  },
+  "sizes": [
+   "250 g"
+  ],
+  "image": "cafe-tostado-intenso",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-tostado-intenso/"
+ },
+ {
+  "id": 3958,
+  "slug": "cafe-tostado-sutil",
+  "name": "Café Tostado Sutil",
+  "fullName": "La Virginia – Café Tostado Sutil",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Tostado",
+  "categoryOrder": 1,
+  "description": [
+   "Para elaborar La Virginia Tostado Sutil seleccionamos nuestros mejores granos de diversos orígenes y los tostamos lentamente. Como resultado logramos una bebida suave, aterciopelada y con la acidez justa."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Descripción general",
+    "v": "Un café de buen cuerpo con un armonioso residual en boca"
+   }
+  ],
+  "intensity": {
+   "label": "Intensidad",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "250 g"
+  ],
+  "image": "cafe-tostado-sutil",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cafe-tostado-sutil/"
+ },
+ {
+  "id": 3885,
+  "slug": "molido-tostado",
+  "name": "Molido Tostado",
+  "fullName": "La Virginia – Molido Tostado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Tostado",
+  "categoryOrder": 1,
+  "description": [
+   "Nuestro café 100% tostado natural es una selección de los mejores granos de cafés de variedades arábicas y robustas. Los tostamos cuidadosamente para alcanzar un perfil de sabor balanceado, buen cuerpo y gran aroma."
+  ],
+  "claims": [],
+  "notes": [
+   {
+    "k": "Descripción general",
+    "v": "Un café equilibrado, con el delicado aroma y sabor de la variedad arábica. El café de variedad robusta aporta potencia y cuerpo a la bebida."
+   }
+  ],
+  "intensity": {
+   "label": "Grado de tostación",
+   "value": 2,
+   "max": 5
+  },
+  "sizes": [],
+  "image": "molido-tostado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-clasico-molido-tostado/"
+ },
+ {
+  "id": 1072,
+  "slug": "tostado-espresso-molido-100-arabica",
+  "name": "Tostado Espresso Molido 100% arábica",
+  "fullName": "La Virginia – Tostado Espresso Molido 100% arábica",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Tostado",
+  "categoryOrder": 1,
+  "description": [
+   "Para elaborar La Virginia Espresso elegimos nuestros mejores granos de Brasil y los tostamos lentamente hasta conseguir un perfil de sabor equilibrado.",
+   "Un café con cuerpo y aroma, con un persistente residual en boca."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Descripción general",
+    "v": "Un café tostado con todo el aroma y sabor que solo La Virginia puede lograr."
+   }
+  ],
+  "intensity": {
+   "label": "Grado de tostación",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "250 g",
+   "500 g"
+  ],
+  "image": "tostado-espresso-molido-100-arabica",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-tostado-espresso-molido-100-arabica/"
+ },
+ {
+  "id": 640,
+  "slug": "clasico-molido-torrado-equilibrado",
+  "name": "Clásico Molido Torrado Equilibrado",
+  "fullName": "La Virginia – Clásico Molido Torrado Equilibrado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Torrado",
+  "categoryOrder": 2,
+  "description": [
+   "Para elaborar La Virginia Torrado Clásico elegimos nuestros mejores granos y los tostamos hasta alcanzar el punto exacto. Luego los mezclamos hasta conseguir el sabor del clásico café argentino."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [
+   {
+    "k": "Descripción general",
+    "v": "Un café de buen cuerpo con un armonioso residual en boca"
+   }
+  ],
+  "intensity": {
+   "label": "Grado de tostación",
+   "value": 3,
+   "max": 5
+  },
+  "sizes": [
+   "1000 g",
+   "125 g",
+   "250 g",
+   "500 g"
+  ],
+  "image": "clasico-molido-torrado-equilibrado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-clasico-molido-torrado/"
+ },
+ {
+  "id": 3056,
+  "slug": "cafe-puro-aroma-en-granos",
+  "name": "Café Puro Aroma en granos",
+  "fullName": "La Virginia – Café Puro Aroma en granos",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "En granos",
+  "categoryOrder": 3,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "500 g"
+  ],
+  "image": "cafe-puro-aroma-en-granos",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cafe-puro-aroma-en-granos/"
+ },
+ {
+  "id": 1685,
+  "slug": "capsulas-cappuccino-dulce-de-leche",
+  "name": "Cápsulas Cappuccino Dulce de Leche",
+  "fullName": "La Virginia – Cápsulas Cappuccino Dulce de Leche",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "8 cápsulas"
+  ],
+  "image": "capsulas-cappuccino-dulce-de-leche",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-cappuccino-dulce-de-leche/"
+ },
+ {
+  "id": 1682,
+  "slug": "capsulas-cappuccino-mousse-de-chocolate-y-avellanas",
+  "name": "Cápsulas Cappuccino Mousse de Chocolate y Avellanas",
+  "fullName": "La Virginia – Cápsulas Cappuccino Mousse de Chocolate y Avellanas",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "8 cápsulas"
+  ],
+  "image": "capsulas-cappuccino-mousse-de-chocolate-y-avellanas",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-cappuccino-mousse-de-chocolate-y-avellanas/"
+ },
+ {
+  "id": 1679,
+  "slug": "capsulas-cappuccino-tradicional",
+  "name": "Cápsulas Cappuccino Tradicional",
+  "fullName": "La Virginia – Cápsulas Cappuccino Tradicional",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "8 cápsulas"
+  ],
+  "image": "capsulas-cappuccino-tradicional",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-cappuccino-tradicional/"
+ },
+ {
+  "id": 1676,
+  "slug": "capsulas-cortado",
+  "name": "Cápsulas Cortado",
+  "fullName": "La Virginia – Cápsulas Cortado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas"
+  ],
+  "image": "capsulas-cortado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-cortado/"
+ },
+ {
+  "id": 3984,
+  "slug": "capsulas-descafeinado",
+  "name": "Cápsulas Descafeinado",
+  "fullName": "La Virginia – Cápsulas Descafeinado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [
+   "El gentil método de descafeinado cuida los aromas y matices del café, conservando el sabor equilibrado y la complejidad original."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas",
+   "20 cápsulas"
+  ],
+  "image": "capsulas-descafeinado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-descafeinado/"
+ },
+ {
+  "id": 1173,
+  "slug": "capsulas-equilibrado",
+  "name": "Cápsulas Equilibrado",
+  "fullName": "La Virginia – Cápsulas Equilibrado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [
+   "Combina la potencia de su aroma con un sabor equilibrado y una redondez exquisita."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas",
+   "20 cápsulas"
+  ],
+  "image": "capsulas-equilibrado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-equilibrado/"
+ },
+ {
+  "id": 1671,
+  "slug": "capsulas-espresso",
+  "name": "Cápsulas Espresso",
+  "fullName": "La Virginia – Cápsulas Espresso",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas"
+  ],
+  "image": "capsulas-espresso",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-espresso/"
+ },
+ {
+  "id": 3486,
+  "slug": "capsulas-extra-intenso",
+  "name": "Cápsulas Extra Intenso",
+  "fullName": "La Virginia – Cápsulas Extra Intenso",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [
+   "La intensidad y el cuerpo de la alta tostación se combinan en un blend de poderoso aroma y perdurables notas de chocolate oscuro."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas",
+   "20 cápsulas"
+  ],
+  "image": "capsulas-extra-intenso",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-extra-intenso/"
+ },
+ {
+  "id": 1176,
+  "slug": "capsulas-intenso",
+  "name": "Cápsulas Intenso",
+  "fullName": "La Virginia – Cápsulas Intenso",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [
+   "Un particular perfil de tostación le confiere a este blend un sabor intenso que perdura en boca.",
+   "Ideal para los conocedores y amantes del café con personalidad."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas"
+  ],
+  "image": "capsulas-intenso",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-intenso/"
+ },
+ {
+  "id": 1179,
+  "slug": "capsulas-sutil",
+  "name": "Cápsulas Sutil",
+  "fullName": "La Virginia – Cápsulas Sutil",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Cápsulas",
+  "categoryOrder": 4,
+  "description": [
+   "Suave y aterciopelado.",
+   "Este café se deja descubrir por su aroma, su blend balanceado y su sabor perfecto."
+  ],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "10 cápsulas"
+  ],
+  "image": "capsulas-sutil",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-capsulas-sutil/"
+ },
+ {
+  "id": 1078,
+  "slug": "cafe-en-saquitos-5g-torrado-equilibrado",
+  "name": "Café en saquitos 5g Torrado Equilibrado",
+  "fullName": "La Virginia – Café en saquitos 5g Torrado Equilibrado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "En saquitos",
+  "categoryOrder": 5,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "cafe-en-saquitos-5g-torrado-equilibrado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cafe-en-saquitos-5g-torrado-equilibrado/"
+ },
+ {
+  "id": 933,
+  "slug": "cafe-en-saquitos-7g-puro-aroma",
+  "name": "Café en saquitos 7g Puro Aroma",
+  "fullName": "La Virginia – Café en saquitos 7g Puro Aroma",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "En saquitos",
+  "categoryOrder": 5,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "20 saquitos"
+  ],
+  "image": "cafe-en-saquitos-7g-puro-aroma",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cafe-en-saquitos-7g-puro-aroma/"
+ },
+ {
+  "id": 1081,
+  "slug": "clasico-instantaneo",
+  "name": "Clásico Instantáneo",
+  "fullName": "La Virginia – Clásico Instantáneo",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Instantáneo",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "Frasco 100g",
+   "Frasco 170g",
+   "Frasco 50g",
+   "PackAhorro 100g",
+   "PackAhorro 170g",
+   "Sobres Individuales"
+  ],
+  "image": "clasico-instantaneo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-clasico-instantaneo/"
+ },
+ {
+  "id": 1121,
+  "slug": "kalma-descafeinado-instantaneo",
+  "name": "Kalma Descafeinado Instantáneo",
+  "fullName": "La Virginia – Kalma Descafeinado Instantáneo",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Instantáneo",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "100g",
+   "170g"
+  ],
+  "image": "kalma-descafeinado-instantaneo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-kalma-descafeinado-instantaneo/"
+ },
+ {
+  "id": 1115,
+  "slug": "seleccion-granulado-instantaneo",
+  "name": "Selección Granulado Instantáneo",
+  "fullName": "La Virginia – Selección Granulado Instantáneo",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Instantáneo",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "100g",
+   "170g",
+   "Doy Pack 150g"
+  ],
+  "image": "seleccion-granulado-instantaneo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-seleccion-granulado-instantaneo/"
+ },
+ {
+  "id": 1104,
+  "slug": "suave-instantaneo",
+  "name": "Suave Instantáneo",
+  "fullName": "La Virginia – Suave Instantáneo",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Instantáneo",
+  "categoryOrder": 6,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "Frasco 100g",
+   "Frasco 170g",
+   "Frasco 50g",
+   "PackAhorro 100g",
+   "PackAhorro 170g",
+   "Sobres Individuales"
+  ],
+  "image": "suave-instantaneo",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-suave-instantaneo/"
+ },
+ {
+  "id": 3664,
+  "slug": "cappuccino-choco-mocha",
+  "name": "Cappuccino Choco Mocha",
+  "fullName": "La Virginia – Cappuccino Choco Mocha",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "Doy Pack 125g"
+  ],
+  "image": "cappuccino-choco-mocha",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cappuccino-choco-mocha/"
+ },
+ {
+  "id": 1153,
+  "slug": "cappuccino-dietetico",
+  "name": "Cappuccino Dietético",
+  "fullName": "La Virginia – Cappuccino Dietético",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "100g",
+   "Doy Pack 100g",
+   "Sobres Individuales"
+  ],
+  "image": "cappuccino-dietetico",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cappuccino-dietetico/"
+ },
+ {
+  "id": 1163,
+  "slug": "cappuccino-dulce-de-leche",
+  "name": "Cappuccino Dulce de Leche",
+  "fullName": "La Virginia – Cappuccino Dulce de Leche",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "155g",
+   "Doy Pack 155g"
+  ],
+  "image": "cappuccino-dulce-de-leche",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cappuccino-dulce-de-leche/"
+ },
+ {
+  "id": 1161,
+  "slug": "cappuccino-espuma-de-vainilla",
+  "name": "Cappuccino Espuma de Vainilla",
+  "fullName": "La Virginia – Cappuccino Espuma de Vainilla",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "155g",
+   "Doy Pack 155g"
+  ],
+  "image": "cappuccino-espuma-de-vainilla",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cappuccino-vainilla/"
+ },
+ {
+  "id": 1165,
+  "slug": "cappuccino-mousse-de-chocolate-y-avellanas",
+  "name": "Cappuccino Mousse de Chocolate y Avellanas",
+  "fullName": "La Virginia – Cappuccino Mousse de Chocolate y Avellanas",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "155g",
+   "Doy Pack 155g",
+   "Sobres Individuales"
+  ],
+  "image": "cappuccino-mousse-de-chocolate-y-avellanas",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cappuccino-mousse-chocolate-avellanas/"
+ },
+ {
+  "id": 1171,
+  "slug": "cappuccino-tradicional",
+  "name": "Cappuccino Tradicional",
+  "fullName": "La Virginia – Cappuccino Tradicional",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "Doy Pack 100g",
+   "Doy Pack 125g",
+   "Doy Pack 155g",
+   "Doy Pack 275g",
+   "Frasco 210g",
+   "Sobres Individuales"
+  ],
+  "image": "cappuccino-tradicional",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cappuccino-tradicional/"
+ },
+ {
+  "id": 1167,
+  "slug": "cortado",
+  "name": "Cortado",
+  "fullName": "La Virginia – Cortado",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "Doy Pack 125g",
+   "Sobres Individuales"
+  ],
+  "image": "cortado",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-cortado/"
+ },
+ {
+  "id": 1169,
+  "slug": "latte",
+  "name": "Latte",
+  "fullName": "La Virginia – Latte",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Mixes",
+  "categoryOrder": 7,
+  "description": [],
+  "claims": [
+   "Sin T.A.C.C."
+  ],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "125 g",
+   "Doy Pack 125g"
+  ],
+  "image": "latte",
+  "source": "https://www.lavirginia.com.ar/producto/la-virginia-latte/"
+ },
+ {
+  "id": 2415,
+  "slug": "filtros-de-papel",
+  "name": "Filtros de papel",
+  "fullName": "Filtros de papel",
+  "brand": "La Virginia",
+  "line": "cafe",
+  "category": "Accesorios",
+  "categoryOrder": 8,
+  "description": [],
+  "claims": [],
+  "notes": [],
+  "intensity": null,
+  "sizes": [
+   "40 unidades"
+  ],
+  "image": "filtros-de-papel",
+  "source": "https://www.lavirginia.com.ar/producto/filtros-de-papel/"
+ }
+]

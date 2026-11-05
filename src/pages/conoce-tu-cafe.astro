@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Lines from '../components/Lines.astro';
+import { url, media } from '../lib/site';
+const factors = [
+  ['Origen geográfico', 'Brasil, Colombia, Honduras, Perú y Etiopía, entre otros.'],
+  ['Botánica', 'Arábica: complejidad aromática, sabores suaves y acidez característica. Robusta: sabores más fuertes y más cafeína.'],
+  ['Beneficio', 'El método de despulpado: seco o húmedo.'],
+  ['Blend de granos', 'La combinación de orígenes que define el perfil de la taza.'],
+  ['Punto de tostación', 'Bajo, medio o alto.'],
+  ['Molienda', 'Fina, media o gruesa, según el método de preparación.'],
+  ['Tipo de café', 'Molido, en grano o instantáneo.'],
+  ['Preparación', 'Filtrado, espresso, por goteo y más.'],
+];
+const formats = ['Café molido', 'Café en grano', 'Café en cápsulas', 'Café en saquitos', 'Mixes o cappuccinos', 'Café soluble o instantáneo'];
+---
+<Base title="Conocé tu café" tone="light">
+  <section class="gh t-noche">
+    <div class="gh__bg"><img src={media('granos.avif')} alt="" width="1600" height="893" fetchpriority="high" /></div>
+    <div class="wrap gh__in">
+      <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><span>Conocé tu café</span></nav>
+      <p class="label">VI · Guía</p>
+      <Lines as="h1" class="d1" text="Todo lo que hay|en tu _taza._" />
+      <p class="lede" data-rv>Su origen, sus tipos y la diferencia entre café torrado y tostado, explicada por quienes lo seleccionan desde hace más de 100 años.</p>
+    </div>
+  </section>
+
+  <section class="sec wrap">
+    <div class="gsplit">
+      <div class="gsplit__head">
+        <p class="label">Los atributos</p>
+        <Lines class="d2" text="Ocho factores|definen _cada taza._" />
+        <p class="lede" data-rv>Sabor, aroma, color, intensidad y cuerpo dependen de múltiples factores.</p>
+      </div>
+      <ol class="fac">
+        {factors.map(([t, d], i) => (
+          <li data-rv style={`--d:${(i % 4) * 70}`}><span class="roman">{String(i + 1).padStart(2, '0')}</span><div><h3>{t}</h3><p>{d}</p></div></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="t-crema sec">
+    <div class="wrap">
+      <p class="label">La gran pregunta</p>
+      <Lines class="d2" text="¿Torrado o _tostado?_" />
+      <div class="vs">
+        <article class="vs__card" data-rv>
+          <span class="roman">a.</span>
+          <h3>Tostado</h3>
+          <p>Granos tostados sin agregados. El perfil de la taza expresa el origen, la botánica y el punto de tostación elegidos.</p>
+        </article>
+        <article class="vs__card vs__card--dark" data-rv style="--d:120">
+          <span class="roman">b.</span>
+          <h3>Torrado</h3>
+          <p>Los granos se tuestan en presencia de azúcar, lo que da a la bebida su color intenso y cuerpo característico. A este proceso se lo llama torrefacción, y es independiente de la calidad del grano.</p>
+        </article>
+      </div>
+      <div class="sugar" data-rv>
+        <div class="sugar__bar"><span class="sugar__a" style="--w:1.6%"></span><b>0,1 g</b><span>de azúcar por taza de café torrado</span></div>
+        <div class="sugar__bar"><span class="sugar__b" style="--w:100%"></span><b>6,25 g</b><span>en un sobre o una cucharadita (60 veces más)</span></div>
+        <p class="prose">Durante la torrefacción el azúcar se carameliza. Por la cantidad remanente tan pequeña, el Código Alimentario Argentino obliga a declararla como 0 en el envase.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap gorigin">
+    <div>
+      <p class="label">Origen del torrado en Argentina</p>
+      <Lines class="d3" text="Una tradición que llegó|con los _inmigrantes españoles._" />
+      <p class="prose" data-rv style="margin-top:18px">Se desarrolló para mejorar la conservación del grano, protegiéndolo de la oxidación y la humedad. Hoy se ofrece en Alemania, Francia, España, Portugal, Estados Unidos, México, Uruguay y Paraguay, entre otros países.</p>
+    </div>
+    <div>
+      <p class="label">Formatos La Virginia</p>
+      <ul class="fmt" data-rv>{formats.map((f) => <li>{f}</li>)}</ul>
+      <a class="btn" href={url('/cafe/')} style="margin-top:24px">Ver el catálogo de café <Icon name="arrow" /></a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .gh { position: relative; overflow: hidden; padding-top: calc(var(--header-h) + clamp(60px, 9vw, 140px)); padding-bottom: clamp(56px, 7vw, 110px); isolation: isolate; }
+  .gh__bg { position: absolute; inset: 0; z-index: -1; }
+  .gh__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; }
+  .gh__bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--noche) 25%, rgba(6, 26, 64, 0.3)); }
+  .gh .crumbs { color: rgba(251, 248, 242, 0.6); }
+  .gh h1 { margin-top: 18px; }
+  .gh .lede { margin-top: 24px; }
+  .gsplit { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 6vw, 96px); align-items: start; }
+  .gsplit__head { position: sticky; top: calc(var(--header-h) + 30px); }
+  .gsplit h2 { margin-top: 18px; }
+  .gsplit .lede { margin-top: 20px; }
+  .fac { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+  .fac li { display: grid; grid-template-columns: 40px 1fr; gap: 10px; padding: 22px 0; border-top: 1px solid var(--rule); }
+  .fac h3 { font-size: 1.3rem; font-weight: 380; }
+  .fac p { color: var(--muted); font-size: 0.94rem; margin-top: 4px; }
+  .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: clamp(36px, 5vw, 64px); }
+  .vs__card { padding: clamp(28px, 4vw, 48px); border-radius: 999px 999px 26px 26px; background: var(--porcelana); min-height: 440px; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px; }
+  .vs__card h3 { font-size: clamp(2.4rem, 1rem + 3vw, 4rem); font-weight: 300; }
+  .vs__card p { color: var(--muted); max-width: 44ch; }
+  .vs__card--dark { background: var(--cafe); color: var(--porcelana); --muted: rgba(251, 248, 242, 0.78); --accent: var(--oro); }
+  .sugar { margin-top: 36px; padding: clamp(24px, 3vw, 36px); border-radius: 22px; background: var(--porcelana); display: grid; gap: 16px; }
+  .sugar__bar { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 16px; align-items: center; }
+  .sugar__bar > span:first-child { grid-column: 1 / -1; height: 12px; border-radius: 6px; background: var(--crema-2); position: relative; overflow: hidden; margin-bottom: 8px; }
+  .sugar__bar > span:first-child::after { content: ''; position: absolute; inset: 0 auto 0 0; width: var(--w); background: var(--cafe); border-radius: 6px; }
+  .sugar__bar .sugar__a::after { background: var(--te) !important; min-width: 8px; }
+  .sugar__bar b { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; }
+  .sugar__bar span:last-child { color: var(--muted); grid-column: 1; grid-row: 2; }
+  .sugar__bar b { grid-column: 2; grid-row: 2; }
+  .gorigin { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 96px); }
+  .gorigin h2 { margin-top: 16px; }
+  .fmt { list-style: none; padding: 0; margin-top: 16px; }
+  .fmt li { padding: 14px 0; border-top: 1px solid var(--rule); font-family: var(--serif); font-size: 1.35rem; }
+  @media (max-width: 900px) { .gsplit, .gorigin, .vs { grid-template-columns: 1fr; } .gsplit__head { position: static; } .fac { grid-template-columns: 1fr; } .vs__card { min-height: 300px; } }
+</style>

@@ -1,0 +1,13 @@
+---
+import raw from '../assets/logo.svg?raw';
+interface Props { class?: string; tagline?: boolean; title?: string }
+const { class: cls, tagline = true, title = 'La Virginia' } = Astro.props;
+// Logotipo oficial (vector de lavirginia.com.ar), recoloreado con currentColor
+let svg = raw.replace(/<\?xml[^>]*>/, '').replace(/#ffd302/gi, 'currentColor');
+svg = svg.replace('<svg ', `<svg role="img" aria-label="${title}" ${tagline ? '' : 'data-notag="1" '}`);
+---
+<span class:list={['logo', cls]} set:html={svg} />
+<style>
+  .logo { display: block; line-height: 0; }
+  .logo :global(svg) { width: 100%; height: auto; }
+</style>

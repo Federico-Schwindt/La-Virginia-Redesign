@@ -1,0 +1,38 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { nav, url } from '../lib/site';
+interface Props { tone?: 'light' | 'dark' }
+const { tone = 'light' } = Astro.props;
+const path = Astro.url.pathname;
+const cur = (h: string) => (path.startsWith(url(h)) ? 'page' : undefined);
+---
+<header class="hdr" data-hdr data-tone={tone}>
+  <div class="hdr__bg" aria-hidden="true"></div>
+  <div class="wrap hdr__in">
+    <nav class="hdr__nav" aria-label="Principal">
+      <button class="hdr__menu" type="button" data-open-menu aria-label="Abrir menú" aria-expanded="false"><Icon name="menu" /></button>
+      {nav.slice(0, 3).map((n) => <a href={url(n.href)} aria-current={cur(n.href)}>{n.label}</a>)}
+    </nav>
+    <a href={url('/')} class="hdr__logo" aria-label="La Virginia — inicio"><Logo /></a>
+    <nav class="hdr__nav hdr__nav--r" aria-label="Secundaria">
+      {nav.slice(3, 5).map((n) => <a href={url(n.href)} aria-current={cur(n.href)}>{n.label}</a>)}
+      <button class="hdr__order" type="button" data-open-order>
+        <Icon name="box" />
+        <span>Pedido</span>
+        <span class="hdr__count" data-order-count>0</span>
+        <span class="sr-only">productos en la solicitud</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="mnav" data-menu aria-hidden="true" inert>
+  <button class="mnav__close" type="button" data-close-menu aria-label="Cerrar menú"><Icon name="close" /></button>
+  <nav aria-label="Menú móvil">
+    <a href={url('/')}><small>·</small>Inicio</a>
+    {nav.map((n) => <a href={url(n.href)}><small>{n.n}</small>{n.label}</a>)}
+    <a href={url('/pedido/')}><small>✦</small>Pedido mayorista</a>
+  </nav>
+  <p class="mnav__foot">Rosario, Santa Fe · Desde 1915</p>
+</div>

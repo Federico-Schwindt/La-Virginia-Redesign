@@ -1,0 +1,78 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Lines from '../components/Lines.astro';
+import { url, media, tes } from '../lib/site';
+const steps = [
+  ['Todo comienza en la naturaleza', 'El papel filtro se elabora con una selección de fibras vegetales y PLA (ácido poliláctico), un biopolímero 100% natural derivado de fuentes renovables como el maíz o la caña de azúcar.'],
+  ['Tu taza, todos los días', 'El saquito de papel que hoy tenés en tu taza tiene, gracias a su origen natural, la capacidad de transformarse y volver a la tierra después de usarlo.'],
+  ['Compostaje industrial', 'Bajo condiciones controladas de temperatura y humedad, el PLA se hidroliza y biodegrada.'],
+  ['Regreso a la tierra', 'Se transforma en CO₂, agua y biomasa: las mismas que absorben las plantas. Un proceso circular, sin residuos persistentes.'],
+];
+---
+<Base title="Naturalidad que se disfruta" tone="dark">
+  <section class="phead wrap sh">
+    <div>
+      <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><span>Sustentabilidad</span></nav>
+      <p class="label" style="--accent:var(--te)">V · Naturalidad que se disfruta</p>
+      <Lines as="h1" class="d1" text="El ciclo de vida|de un _saquito._" />
+      <p class="lede" style="margin-top:24px" data-rv>Nuestros saquitos de papel filtro hechos a base de plantas son 100% biodegradables y compostables industrialmente.</p>
+    </div>
+    <div class="sh__media arch">
+      <video muted playsinline preload="none" aria-label="Un brote crece junto a un saquito de té" data-lazy poster={media('compost.avif')}><source data-src={media('compost.mp4')} type="video/mp4" /></video>
+    </div>
+  </section>
+
+  <section class="t-crema sec">
+    <div class="wrap">
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="170" class="ring__track" /><circle cx="200" cy="200" r="170" class="ring__arc" data-ring /></svg>
+        <div class="ring__center"><Icon name="recycle" size={40} /><p class="serif">Un proceso <em>circular</em></p></div>
+      </div>
+      <ol class="cyc">
+        {steps.map(([t, d], i) => (
+          <li data-rv style={`--d:${i * 110}`}><span class="cyc__n onum">{i + 1}</span><h2 class="d3">{t}</h2><p class="prose">{d}</p></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec wrap sclose">
+    <p class="label" style="--accent:var(--te)">Sumate al ciclo</p>
+    <Lines class="d2" text={`${tes.length} variedades de té|y hierbas en _saquito._`} />
+    <a class="btn" href={url('/te/')} style="margin-top:28px">Ver el catálogo de té <Icon name="arrow" /></a>
+  </section>
+
+  <script>
+    import { animate, scroll } from 'motion';
+    const arc = document.querySelector<SVGCircleElement>('[data-ring]');
+    if (arc && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const len = 2 * Math.PI * 170;
+      arc.style.strokeDasharray = `${len}`;
+      scroll(animate(arc, { strokeDashoffset: [len, 0] }, { ease: 'linear' }), { target: arc.closest('section')!, offset: ['start end', 'center center'] });
+    }
+  </script>
+</Base>
+
+<style>
+  .sh { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 80px); align-items: end; }
+  .sh h1 { margin-top: 18px; }
+  .sh h1 :global(em) { color: var(--te); }
+  .sh__media { aspect-ratio: 4 / 4.4; }
+  .ring { position: relative; width: min(380px, 80vw); aspect-ratio: 1; margin: 0 auto clamp(48px, 6vw, 80px); }
+  .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .ring__track { fill: none; stroke: rgba(79, 107, 58, 0.18); stroke-width: 2; }
+  .ring__arc { fill: none; stroke: var(--te); stroke-width: 3; stroke-linecap: round; }
+  .ring__center { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 10px; text-align: center; color: var(--te); }
+  .ring__center p { font-size: 1.7rem; color: var(--tinta); }
+  .ring__center em { color: var(--te); }
+  .cyc { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .cyc li { padding: 28px; border-radius: 22px; background: var(--porcelana); box-shadow: inset 0 0 0 1px var(--rule); display: grid; gap: 12px; align-content: start; }
+  .cyc__n { font-family: var(--serif); font-style: italic; font-size: 2.4rem; color: var(--te); line-height: 1; }
+  .sclose { text-align: center; display: grid; justify-items: center; }
+  .sclose h2 { margin-top: 18px; }
+  .sclose h2 :global(em) { color: var(--te); }
+  @media (max-width: 1000px) { .cyc { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 860px) { .sh { grid-template-columns: 1fr; } .sh__media { order: -1; aspect-ratio: 4 / 3; } }
+  @media (max-width: 560px) { .cyc { grid-template-columns: 1fr; } }
+</style>

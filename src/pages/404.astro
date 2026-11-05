@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import Seal from '../components/Seal.astro';
+import { url } from '../lib/site';
+---
+<Base title="Página no encontrada">
+  <section class="nf t-azul">
+    <div class="wrap nf__in">
+      <Seal class="nf__seal" text="ESTA TAZA ESTÁ VACÍA · ERROR 404 · LA VIRGINIA · " />
+      <p class="label">Error 404</p>
+      <h1 class="d1">Esta taza está <em>vacía.</em></h1>
+      <p class="lede">La página que buscás no existe, pero hay más de sesenta variedades esperando.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px;justify-content:center">
+        <a class="btn btn--oro" href={url('/')}>Volver al inicio <Icon name="arrow" /></a>
+        <a class="btn btn--line" href={url('/te/')}>Ver el catálogo</a>
+      </div>
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { min-height: 100svh; display: grid; place-items: center; text-align: center; padding-top: var(--header-h); }
+  .nf__in { display: grid; justify-items: center; gap: 18px; }
+  .nf__seal { width: 160px; }
+  .nf .lede { margin-inline: auto; }
+</style>

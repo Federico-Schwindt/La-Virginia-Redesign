@@ -1,0 +1,45 @@
+---
+import Logo from './Logo.astro';
+import { url, company, AUTHOR } from '../lib/site';
+---
+<footer class="ftr t-noche">
+  <div class="wrap">
+    <div class="ftr__top">
+      <div>
+        <p class="label">Cafés La Virginia S.A.</p>
+        <p class="d3" style="margin-top:18px;max-width:16ch">Sabores que <em>reconfortan</em>, desde 1915.</p>
+        <p style="margin-top:20px;color:var(--muted)">Rosario, Santa Fe · Argentina<br />Tel. {company.phone}</p>
+      </div>
+      <div class="ftr__col">
+        <h4>Productos</h4>
+        <a href={url('/te/')}>Té y herboristería</a>
+        <a href={url('/cafe/')}>Café</a>
+        <a href={url('/conoce-tu-cafe/')}>Conocé tu café</a>
+        <a href={url('/sustentabilidad/')}>Saquito compostable</a>
+      </div>
+      <div class="ftr__col">
+        <h4>Empresa</h4>
+        <a href={url('/empresa/')}>Nuestra historia</a>
+        <a href={url('/empresa/#planta')}>Nuestra planta</a>
+        <a href={url('/empresa/#calidad')}>Calidad FSSC 22000</a>
+      </div>
+      <div class="ftr__col">
+        <h4>Negocios</h4>
+        <a href={url('/empresas/')}>Para empresas</a>
+        <a href={url('/empresas/#espresso')}>La Virginia Espresso</a>
+        <a href={url('/empresas/#exterior')}>Comercio exterior</a>
+        <a href={url('/pedido/')}>Pedido mayorista</a>
+      </div>
+    </div>
+    <a href={url('/')} class="ftr__logo" aria-label="La Virginia"><Logo /></a>
+    <p class="ftr__legal">
+      Concepto de rediseño no oficial, creado por {AUTHOR.name} con fines de portfolio. No está afiliado, avalado ni patrocinado por Cafés La Virginia S.A.
+      “La Virginia”, su logotipo, nombres de productos, imágenes de packaging y textos son marcas o propiedad de sus respectivos titulares y se muestran solo con fines ilustrativos.
+      En este sitio no se vende nada ni se recopilan datos. Sitio oficial: <a href="https://www.lavirginia.com.ar" target="_blank" rel="noopener">lavirginia.com.ar</a>.
+    </p>
+    <div class="ftr__bot">
+      <span>Rediseño conceptual · {new Date().getFullYear()} · No es el sitio oficial de La Virginia</span>
+      <span class="ftr__links"><a class="lnk" href={url('/pitch/')} style="color:var(--oro)">Ver la propuesta</a><button type="button" class="lnk" data-open-notice style="color:var(--oro)">Leer el aviso completo</button></span>
+    </div>
+  </div>
+</footer>

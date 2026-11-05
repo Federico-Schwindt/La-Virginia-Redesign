@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { url, provincias } from '../lib/site';
+---
+<Base title="Solicitud de pedido mayorista" tone="dark">
+  <section class="phead wrap">
+    <nav class="crumbs" aria-label="Migas"><a href={url('/')}>Inicio</a><span>/</span><span>Pedido mayorista</span></nav>
+    <p class="label">Para comercios, gastronomía y distribuidores</p>
+    <h1 class="d1" style="margin-top:18px">Tu <em>solicitud</em> de pedido.</h1>
+    <p class="lede" style="margin-top:22px">Armá tu lista con presentaciones y bultos. Un ejecutivo de la sucursal más cercana te envía la cotización y coordina la entrega.</p>
+    <p class="demo"><Icon name="shield" size={16} /> Demostración: no se envían datos ni se generan pedidos reales.</p>
+  </section>
+
+  <section class="wrap ped" data-ped>
+    <div class="ped__list">
+      <div class="ped__head"><h2 class="d3">Productos</h2><span class="chip" data-total>0 bultos</span></div>
+      <div data-items></div>
+      <div class="ped__empty" data-empty hidden>
+        <Icon name="box" size={48} />
+        <p>Todavía no agregaste productos.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center"><a class="btn btn--sm" href={url('/te/')}>Catálogo de té</a><a class="btn btn--sm btn--line" href={url('/cafe/')}>Catálogo de café</a></div>
+      </div>
+    </div>
+
+    <form class="ped__form" data-form novalidate>
+      <h2 class="d3">Datos del comercio</h2>
+      <div class="row2">
+        <div class="field"><label for="rs">Razón social</label><input class="input" id="rs" required autocomplete="organization" /></div>
+        <div class="field"><label for="cuit">CUIT</label><input class="input" id="cuit" required inputmode="numeric" placeholder="30-12345678-9" /></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="rubro">Rubro</label>
+          <select class="input" id="rubro" required><option value="">Elegí</option><option>Almacén / autoservicio</option><option>Supermercado</option><option>Cafetería / gastronomía</option><option>Hotelería</option><option>Distribuidor mayorista</option><option>Importador (exterior)</option></select>
+        </div>
+        <div class="field"><label for="prov">Provincia</label>
+          <select class="input" id="prov" required><option value="">Elegí</option>{provincias.map((p) => <option>{p}</option>)}</select>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="nom">Contacto</label><input class="input" id="nom" required autocomplete="name" /></div>
+        <div class="field"><label for="tel">Teléfono</label><input class="input" id="tel" required type="tel" autocomplete="tel" /></div>
+      </div>
+      <div class="field"><label for="mail">Email</label><input class="input" id="mail" required type="email" autocomplete="email" /></div>
+      <div class="field"><label for="com">Comentarios</label><textarea class="input" id="com" placeholder="Frecuencia de compra, horarios de entrega, etc."></textarea></div>
+      <button class="btn ped__send" type="submit">Enviar solicitud <Icon name="arrow" /></button>
+      <p class="ped__err" data-err hidden></p>
+    </form>
+  </section>
+
+  <section class="wrap ped__done" data-done hidden>
+    <div class="ped__check"><Icon name="check" size={40} /></div>
+    <p class="label">Solicitud recibida (demo)</p>
+    <h2 class="d2">¡Gracias! Te contactamos pronto.</h2>
+    <p class="lede" style="margin-inline:auto">Solicitud <b data-no></b>. Un ejecutivo de la sucursal que abastece a tu zona te enviará la cotización por email.</p>
+    <a class="btn" href={url('/')}>Volver al inicio <Icon name="arrow" /></a>
+  </section>
+
+  <script>
+    import { Pedido } from '../scripts/app';
+    const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+    const $ = <T extends Element = HTMLElement>(s: string) => document.querySelector<T>(s)!;
+    function render() {
+      const items = Pedido.items();
+      $('[data-empty]').hidden = items.length > 0;
+      $('[data-total]').textContent = `${Pedido.count()} bulto${Pedido.count() === 1 ? '' : 's'}`;
+      $('[data-items]').innerHTML = items.map((i) => `
+        <div class="oitem">
+          <a class="oitem__img" href="${base}/productos/${i.slug}/">${i.img ? `<img src="${base}/img/productos/${i.img}-420.webp" alt="" width="56" height="56">` : ''}</a>
+          <div><a class="oitem__name" href="${base}/productos/${i.slug}/">${i.name}</a><div class="oitem__meta">${i.size} · ${i.line === 'te' ? 'Té' : 'Café'}</div></div>
+          <div><div class="qty" role="group" aria-label="Bultos"><button type="button" data-q="${i.slug}|${i.size}" data-d="-1" aria-label="Restar">−</button><span>${i.qty}</span><button type="button" data-q="${i.slug}|${i.size}" data-d="1" aria-label="Sumar">+</button></div>
+          <button type="button" class="oitem__rm" data-rm="${i.slug}|${i.size}">Quitar</button></div>
+        </div>`).join('');
+    }
+    document.addEventListener('pedido:change', render);
+    render();
+    $<HTMLFormElement>('[data-form]').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const f = e.target as HTMLFormElement;
+      const bad = Array.from(f.querySelectorAll<HTMLInputElement>('[required]')).filter((i) => !i.value.trim());
+      f.querySelectorAll('.input').forEach((i) => i.classList.remove('bad'));
+      const err = $('[data-err]');
+      if (!Pedido.count()) { err.textContent = 'Agregá al menos un producto a la solicitud.'; err.hidden = false; return; }
+      if (bad.length) { bad.forEach((i) => i.classList.add('bad')); err.textContent = 'Completá los campos marcados.'; err.hidden = false; bad[0].focus(); return; }
+      err.hidden = true;
+      $('[data-no]').textContent = `#LV-${Math.floor(10000 + Math.random() * 89999)}`;
+      $('[data-ped]').hidden = true;
+      $('[data-done]').hidden = false;
+      Pedido.clear();
+      scrollTo({ top: 0 });
+    });
+  </script>
+</Base>
+
+<style>
+  .demo { display: inline-flex; gap: 8px; align-items: center; margin-top: 22px; padding: 8px 14px; border-radius: 999px; background: var(--crema); font-size: 0.82rem; color: var(--muted); }
+  .ped { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 80px); padding-bottom: clamp(80px, 10vw, 140px); align-items: start; }
+  .ped__list { position: sticky; top: calc(var(--header-h) + 16px); padding: clamp(20px, 3vw, 32px); border-radius: 26px; background: var(--crema); }
+  .ped__head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .ped__empty { text-align: center; display: grid; justify-items: center; gap: 14px; padding: 40px 0; color: var(--muted); }
+  .ped__form { display: grid; gap: 16px; }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ped__send { justify-self: start; height: 58px; padding-inline: 30px; margin-top: 6px; }
+  .ped__err { color: #b4361f; font-size: 0.9rem; }
+  .ped__done { text-align: center; display: grid; justify-items: center; gap: 18px; padding-block: 40px 140px; }
+  .ped__check { width: 96px; height: 96px; border-radius: 50%; background: var(--oro); color: var(--noche); display: grid; place-items: center; animation: pop 0.8s var(--ease) both; }
+  @keyframes pop { from { transform: scale(0.4); opacity: 0; } }
+  @media (max-width: 900px) { .ped { grid-template-columns: 1fr; } .ped__list { position: relative; top: 0; } .row2 { grid-template-columns: 1fr; } }
+</style>
