@@ -1,42 +1,34 @@
 {
  "measured": "2026-11-05",
- "tool": "Lighthouse 12 \u00b7 emulaci\u00f3n m\u00f3vil (4G lenta simulada)",
+ "tool": "Lighthouse 12.8 \u00b7 emulaci\u00f3n m\u00f3vil (4G lenta simulada)",
  "home": {
   "old": {
-   "perf": 26,
+   "perf": 30,
    "a11y": 91,
    "bp": 57,
    "seo": 69,
-   "fcp": 7049,
-   "lcp": 8993,
-   "tbt": 2983,
+   "fcp": 6074,
+   "lcp": 8251,
+   "tbt": 1599,
    "cls": 0,
-   "si": 13584,
-   "bytes": 3172235,
-   "reqs": 152,
-   "js": 1544523,
-   "a11y_fails": [
-    "color-contrast",
-    "heading-order",
-    "target-size"
-   ]
+   "si": 12279,
+   "bytes": 3173143,
+   "reqs": 150,
+   "js": 1545128
   },
   "new": {
-   "perf": 92,
-   "a11y": 97,
+   "perf": 95,
+   "a11y": 100,
    "bp": 100,
    "seo": 63,
-   "fcp": 1508,
-   "lcp": 3233,
+   "fcp": 1455,
+   "lcp": 2280,
    "tbt": 0,
-   "cls": 0.0,
-   "si": 2743,
-   "bytes": 882377,
-   "reqs": 24,
-   "js": 31909,
-   "a11y_fails": [
-    "color-contrast"
-   ]
+   "cls": 0,
+   "si": 4754,
+   "bytes": 882395,
+   "reqs": 26,
+   "js": 32513
   }
  },
  "pdp": {
@@ -45,36 +37,28 @@
    "a11y": 83,
    "bp": 57,
    "seo": 62,
-   "fcp": 6155,
-   "lcp": 8373,
-   "tbt": 1111,
+   "fcp": 6076,
+   "lcp": 8208,
+   "tbt": 1194,
    "cls": 0.0,
-   "si": 7452,
-   "bytes": 2623356,
+   "si": 7040,
+   "bytes": 2622791,
    "reqs": 157,
-   "js": 1553455,
-   "a11y_fails": [
-    "color-contrast",
-    "heading-order",
-    "image-alt",
-    "link-name",
-    "target-size"
-   ]
+   "js": 1552859
   },
   "new": {
-   "perf": 96,
+   "perf": 100,
    "a11y": 100,
    "bp": 100,
    "seo": 63,
-   "fcp": 1504,
-   "lcp": 2629,
+   "fcp": 1132,
+   "lcp": 1680,
    "tbt": 0,
    "cls": 0,
-   "si": 1760,
-   "bytes": 350359,
-   "reqs": 13,
-   "js": 30925,
-   "a11y_fails": []
+   "si": 2300,
+   "bytes": 351295,
+   "reqs": 15,
+   "js": 31951
   }
  }
 }
